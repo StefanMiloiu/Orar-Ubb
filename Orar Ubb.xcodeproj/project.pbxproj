@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8EF509622BC043E700934F75 /* Orar_UbbApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509612BC043E700934F75 /* Orar_UbbApp.swift */; };
+		8EF509642BC043E700934F75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509632BC043E700934F75 /* ContentView.swift */; };
+		8EF509662BC043E900934F75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF509652BC043E900934F75 /* Assets.xcassets */; };
+		8EF509692BC043E900934F75 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF509682BC043E900934F75 /* Preview Assets.xcassets */; };
+		8EF5096B2BC043E900934F75 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF5096A2BC043E900934F75 /* Persistence.swift */; };
+		8EF5096E2BC043E900934F75 /* Orar_Ubb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8EF5096C2BC043E900934F75 /* Orar_Ubb.xcdatamodeld */; };
+		8EF509782BC043E900934F75 /* Orar_UbbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509772BC043E900934F75 /* Orar_UbbTests.swift */; };
+		8EF509822BC043E900934F75 /* Orar_UbbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509812BC043E900934F75 /* Orar_UbbUITests.swift */; };
+		8EF509842BC043E900934F75 /* Orar_UbbUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509832BC043E900934F75 /* Orar_UbbUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8EF509742BC043E900934F75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EF509562BC043E700934F75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EF5095D2BC043E700934F75;
+			remoteInfo = "Orar Ubb";
+		};
+		8EF5097E2BC043E900934F75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EF509562BC043E700934F75 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EF5095D2BC043E700934F75;
+			remoteInfo = "Orar Ubb";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8EF5095E2BC043E700934F75 /* Orar Ubb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Orar Ubb.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EF509612BC043E700934F75 /* Orar_UbbApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orar_UbbApp.swift; sourceTree = "<group>"; };
+		8EF509632BC043E700934F75 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8EF509652BC043E900934F75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8EF509682BC043E900934F75 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8EF5096A2BC043E900934F75 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		8EF5096D2BC043E900934F75 /* Orar_Ubb.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Orar_Ubb.xcdatamodel; sourceTree = "<group>"; };
+		8EF509732BC043E900934F75 /* Orar UbbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Orar UbbTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EF509772BC043E900934F75 /* Orar_UbbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orar_UbbTests.swift; sourceTree = "<group>"; };
+		8EF5097D2BC043E900934F75 /* Orar UbbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Orar UbbUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EF509812BC043E900934F75 /* Orar_UbbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orar_UbbUITests.swift; sourceTree = "<group>"; };
+		8EF509832BC043E900934F75 /* Orar_UbbUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orar_UbbUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8EF5095B2BC043E700934F75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EF509702BC043E900934F75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EF5097A2BC043E900934F75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8EF509552BC043E700934F75 = {
+			isa = PBXGroup;
+			children = (
+				8EF509602BC043E700934F75 /* Orar Ubb */,
+				8EF509762BC043E900934F75 /* Orar UbbTests */,
+				8EF509802BC043E900934F75 /* Orar UbbUITests */,
+				8EF5095F2BC043E700934F75 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8EF5095F2BC043E700934F75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8EF5095E2BC043E700934F75 /* Orar Ubb.app */,
+				8EF509732BC043E900934F75 /* Orar UbbTests.xctest */,
+				8EF5097D2BC043E900934F75 /* Orar UbbUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8EF509602BC043E700934F75 /* Orar Ubb */ = {
+			isa = PBXGroup;
+			children = (
+				8EF509612BC043E700934F75 /* Orar_UbbApp.swift */,
+				8EF509632BC043E700934F75 /* ContentView.swift */,
+				8EF509652BC043E900934F75 /* Assets.xcassets */,
+				8EF5096A2BC043E900934F75 /* Persistence.swift */,
+				8EF5096C2BC043E900934F75 /* Orar_Ubb.xcdatamodeld */,
+				8EF509672BC043E900934F75 /* Preview Content */,
+			);
+			path = "Orar Ubb";
+			sourceTree = "<group>";
+		};
+		8EF509672BC043E900934F75 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8EF509682BC043E900934F75 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8EF509762BC043E900934F75 /* Orar UbbTests */ = {
+			isa = PBXGroup;
+			children = (
+				8EF509772BC043E900934F75 /* Orar_UbbTests.swift */,
+			);
+			path = "Orar UbbTests";
+			sourceTree = "<group>";
+		};
+		8EF509802BC043E900934F75 /* Orar UbbUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8EF509812BC043E900934F75 /* Orar_UbbUITests.swift */,
+				8EF509832BC043E900934F75 /* Orar_UbbUITestsLaunchTests.swift */,
+			);
+			path = "Orar UbbUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8EF5095D2BC043E700934F75 /* Orar Ubb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EF509872BC043E900934F75 /* Build configuration list for PBXNativeTarget "Orar Ubb" */;
+			buildPhases = (
+				8EF5095A2BC043E700934F75 /* Sources */,
+				8EF5095B2BC043E700934F75 /* Frameworks */,
+				8EF5095C2BC043E700934F75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Orar Ubb";
+			productName = "Orar Ubb";
+			productReference = 8EF5095E2BC043E700934F75 /* Orar Ubb.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8EF509722BC043E900934F75 /* Orar UbbTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EF5098A2BC043E900934F75 /* Build configuration list for PBXNativeTarget "Orar UbbTests" */;
+			buildPhases = (
+				8EF5096F2BC043E900934F75 /* Sources */,
+				8EF509702BC043E900934F75 /* Frameworks */,
+				8EF509712BC043E900934F75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8EF509752BC043E900934F75 /* PBXTargetDependency */,
+			);
+			name = "Orar UbbTests";
+			productName = "Orar UbbTests";
+			productReference = 8EF509732BC043E900934F75 /* Orar UbbTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8EF5097C2BC043E900934F75 /* Orar UbbUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EF5098D2BC043E900934F75 /* Build configuration list for PBXNativeTarget "Orar UbbUITests" */;
+			buildPhases = (
+				8EF509792BC043E900934F75 /* Sources */,
+				8EF5097A2BC043E900934F75 /* Frameworks */,
+				8EF5097B2BC043E900934F75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8EF5097F2BC043E900934F75 /* PBXTargetDependency */,
+			);
+			name = "Orar UbbUITests";
+			productName = "Orar UbbUITests";
+			productReference = 8EF5097D2BC043E900934F75 /* Orar UbbUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8EF509562BC043E700934F75 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					8EF5095D2BC043E700934F75 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					8EF509722BC043E900934F75 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 8EF5095D2BC043E700934F75;
+					};
+					8EF5097C2BC043E900934F75 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 8EF5095D2BC043E700934F75;
+					};
+				};
+			};
+			buildConfigurationList = 8EF509592BC043E700934F75 /* Build configuration list for PBXProject "Orar Ubb" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8EF509552BC043E700934F75;
+			productRefGroup = 8EF5095F2BC043E700934F75 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8EF5095D2BC043E700934F75 /* Orar Ubb */,
+				8EF509722BC043E900934F75 /* Orar UbbTests */,
+				8EF5097C2BC043E900934F75 /* Orar UbbUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8EF5095C2BC043E700934F75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EF509692BC043E900934F75 /* Preview Assets.xcassets in Resources */,
+				8EF509662BC043E900934F75 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EF509712BC043E900934F75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EF5097B2BC043E900934F75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8EF5095A2BC043E700934F75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EF5096B2BC043E900934F75 /* Persistence.swift in Sources */,
+				8EF5096E2BC043E900934F75 /* Orar_Ubb.xcdatamodeld in Sources */,
+				8EF509642BC043E700934F75 /* ContentView.swift in Sources */,
+				8EF509622BC043E700934F75 /* Orar_UbbApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EF5096F2BC043E900934F75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EF509782BC043E900934F75 /* Orar_UbbTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EF509792BC043E900934F75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EF509842BC043E900934F75 /* Orar_UbbUITestsLaunchTests.swift in Sources */,
+				8EF509822BC043E900934F75 /* Orar_UbbUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8EF509752BC043E900934F75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EF5095D2BC043E700934F75 /* Orar Ubb */;
+			targetProxy = 8EF509742BC043E900934F75 /* PBXContainerItemProxy */;
+		};
+		8EF5097F2BC043E900934F75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EF5095D2BC043E700934F75 /* Orar Ubb */;
+			targetProxy = 8EF5097E2BC043E900934F75 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8EF509852BC043E900934F75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8EF509862BC043E900934F75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8EF509882BC043E900934F75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Orar Ubb/Preview Content\"";
+				DEVELOPMENT_TEAM = 8B683A2ABG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-Ubb";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8EF509892BC043E900934F75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Orar Ubb/Preview Content\"";
+				DEVELOPMENT_TEAM = 8B683A2ABG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-Ubb";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8EF5098B2BC043E900934F75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8B683A2ABG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-UbbTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Orar Ubb.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Orar Ubb";
+			};
+			name = Debug;
+		};
+		8EF5098C2BC043E900934F75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8B683A2ABG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-UbbTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Orar Ubb.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Orar Ubb";
+			};
+			name = Release;
+		};
+		8EF5098E2BC043E900934F75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8B683A2ABG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-UbbUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Orar Ubb";
+			};
+			name = Debug;
+		};
+		8EF5098F2BC043E900934F75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8B683A2ABG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-UbbUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Orar Ubb";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8EF509592BC043E700934F75 /* Build configuration list for PBXProject "Orar Ubb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EF509852BC043E900934F75 /* Debug */,
+				8EF509862BC043E900934F75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EF509872BC043E900934F75 /* Build configuration list for PBXNativeTarget "Orar Ubb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EF509882BC043E900934F75 /* Debug */,
+				8EF509892BC043E900934F75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EF5098A2BC043E900934F75 /* Build configuration list for PBXNativeTarget "Orar UbbTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EF5098B2BC043E900934F75 /* Debug */,
+				8EF5098C2BC043E900934F75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EF5098D2BC043E900934F75 /* Build configuration list for PBXNativeTarget "Orar UbbUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EF5098E2BC043E900934F75 /* Debug */,
+				8EF5098F2BC043E900934F75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8EF5096C2BC043E900934F75 /* Orar_Ubb.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8EF5096D2BC043E900934F75 /* Orar_Ubb.xcdatamodel */,
+			);
+			currentVersion = 8EF5096D2BC043E900934F75 /* Orar_Ubb.xcdatamodel */;
+			path = Orar_Ubb.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8EF509562BC043E700934F75 /* Project object */;
+}
