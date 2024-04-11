@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E19D67A2BC453EC000CAD3B /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D6792BC453EC000CAD3B /* CoreDataModel.swift */; };
+		8E19D67C2BC4555E000CAD3B /* SettingsEntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D67B2BC4555E000CAD3B /* SettingsEntityModel.swift */; };
+		8E19D67E2BC48088000CAD3B /* SettingsSemigroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D67D2BC48088000CAD3B /* SettingsSemigroupsView.swift */; };
+		8E19D6802BC48F02000CAD3B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D67F2BC48F02000CAD3B /* MainView.swift */; };
+		8E19D6832BC48F32000CAD3B /* TimeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D6822BC48F32000CAD3B /* TimeTableView.swift */; };
+		8E19D6852BC5C5C6000CAD3B /* TimeTableSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D6842BC5C5C6000CAD3B /* TimeTableSchedule.swift */; };
+		8E19D6872BC70C71000CAD3B /* DaysOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D6862BC70C71000CAD3B /* DaysOfWeek.swift */; };
+		8E19D6892BC70F9A000CAD3B /* LecturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D6882BC70F9A000CAD3B /* LecturesViewModel.swift */; };
+		8E627DFD2BC7294C00EB270F /* WeekPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E627DFC2BC7294C00EB270F /* WeekPicker.swift */; };
+		8EF0A22D2BC1DDCB000E8F6C /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0A22C2BC1DDCB000E8F6C /* CoreDataProvider.swift */; };
+		8EF0A22F2BC1E20F000E8F6C /* SettingsGorupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0A22E2BC1E20F000E8F6C /* SettingsGorupsView.swift */; };
+		8EF0A2312BC1E624000E8F6C /* GroupsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0A2302BC1E624000E8F6C /* GroupsViewModel.swift */; };
 		8EF509622BC043E700934F75 /* Orar_UbbApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509612BC043E700934F75 /* Orar_UbbApp.swift */; };
 		8EF509642BC043E700934F75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509632BC043E700934F75 /* ContentView.swift */; };
 		8EF509662BC043E900934F75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF509652BC043E900934F75 /* Assets.xcassets */; };
@@ -16,6 +28,12 @@
 		8EF509782BC043E900934F75 /* Orar_UbbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509772BC043E900934F75 /* Orar_UbbTests.swift */; };
 		8EF509822BC043E900934F75 /* Orar_UbbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509812BC043E900934F75 /* Orar_UbbUITests.swift */; };
 		8EF509842BC043E900934F75 /* Orar_UbbUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509832BC043E900934F75 /* Orar_UbbUITestsLaunchTests.swift */; };
+		8EF509982BC0495500934F75 /* NetworkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509972BC0495500934F75 /* NetworkData.swift */; };
+		8EF5099B2BC0496900934F75 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 8EF5099A2BC0496900934F75 /* SwiftSoup */; };
+		8EF509A72BC150FE00934F75 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509A62BC150FE00934F75 /* Links.swift */; };
+		8EF509AC2BC157C900934F75 /* SettingsYearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509AB2BC157C900934F75 /* SettingsYearView.swift */; };
+		8EF509AF2BC15B2B00934F75 /* FilterYearsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509AE2BC15B2B00934F75 /* FilterYearsSettings.swift */; };
+		8EF509B12BC15D6600934F75 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509B02BC15D6600934F75 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +54,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E19D6792BC453EC000CAD3B /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
+		8E19D67B2BC4555E000CAD3B /* SettingsEntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEntityModel.swift; sourceTree = "<group>"; };
+		8E19D67D2BC48088000CAD3B /* SettingsSemigroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSemigroupsView.swift; sourceTree = "<group>"; };
+		8E19D67F2BC48F02000CAD3B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		8E19D6822BC48F32000CAD3B /* TimeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableView.swift; sourceTree = "<group>"; };
+		8E19D6842BC5C5C6000CAD3B /* TimeTableSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableSchedule.swift; sourceTree = "<group>"; };
+		8E19D6862BC70C71000CAD3B /* DaysOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOfWeek.swift; sourceTree = "<group>"; };
+		8E19D6882BC70F9A000CAD3B /* LecturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LecturesViewModel.swift; sourceTree = "<group>"; };
+		8E627DFC2BC7294C00EB270F /* WeekPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekPicker.swift; sourceTree = "<group>"; };
+		8EF0A22C2BC1DDCB000E8F6C /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
+		8EF0A22E2BC1E20F000E8F6C /* SettingsGorupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGorupsView.swift; sourceTree = "<group>"; };
+		8EF0A2302BC1E624000E8F6C /* GroupsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewModel.swift; sourceTree = "<group>"; };
 		8EF5095E2BC043E700934F75 /* Orar Ubb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Orar Ubb.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF509612BC043E700934F75 /* Orar_UbbApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orar_UbbApp.swift; sourceTree = "<group>"; };
 		8EF509632BC043E700934F75 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +78,11 @@
 		8EF5097D2BC043E900934F75 /* Orar UbbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Orar UbbUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF509812BC043E900934F75 /* Orar_UbbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orar_UbbUITests.swift; sourceTree = "<group>"; };
 		8EF509832BC043E900934F75 /* Orar_UbbUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orar_UbbUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8EF509972BC0495500934F75 /* NetworkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkData.swift; sourceTree = "<group>"; };
+		8EF509A62BC150FE00934F75 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
+		8EF509AB2BC157C900934F75 /* SettingsYearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsYearView.swift; sourceTree = "<group>"; };
+		8EF509AE2BC15B2B00934F75 /* FilterYearsSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterYearsSettings.swift; sourceTree = "<group>"; };
+		8EF509B02BC15D6600934F75 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EF5099B2BC0496900934F75 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +111,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E19D6782BC453AB000CAD3B /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				8EF0A22C2BC1DDCB000E8F6C /* CoreDataProvider.swift */,
+				8E19D6792BC453EC000CAD3B /* CoreDataModel.swift */,
+				8E19D67B2BC4555E000CAD3B /* SettingsEntityModel.swift */,
+			);
+			path = CoreDataModels;
+			sourceTree = "<group>";
+		};
+		8E19D6812BC48F1C000CAD3B /* TimetableViews */ = {
+			isa = PBXGroup;
+			children = (
+				8E19D6822BC48F32000CAD3B /* TimeTableView.swift */,
+				8E19D6842BC5C5C6000CAD3B /* TimeTableSchedule.swift */,
+				8E627DFC2BC7294C00EB270F /* WeekPicker.swift */,
+			);
+			path = TimetableViews;
+			sourceTree = "<group>";
+		};
 		8EF509552BC043E700934F75 = {
 			isa = PBXGroup;
 			children = (
@@ -98,10 +154,11 @@
 		8EF509602BC043E700934F75 /* Orar Ubb */ = {
 			isa = PBXGroup;
 			children = (
+				8EF509AD2BC15B0400934F75 /* ViewModel */,
+				8EF509902BC0440A00934F75 /* Model */,
+				8EF509912BC0441600934F75 /* View */,
 				8EF509612BC043E700934F75 /* Orar_UbbApp.swift */,
-				8EF509632BC043E700934F75 /* ContentView.swift */,
 				8EF509652BC043E900934F75 /* Assets.xcassets */,
-				8EF5096A2BC043E900934F75 /* Persistence.swift */,
 				8EF5096C2BC043E900934F75 /* Orar_Ubb.xcdatamodeld */,
 				8EF509672BC043E900934F75 /* Preview Content */,
 			);
@@ -133,6 +190,58 @@
 			path = "Orar UbbUITests";
 			sourceTree = "<group>";
 		};
+		8EF509902BC0440A00934F75 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8E19D6782BC453AB000CAD3B /* CoreDataModels */,
+				8EF509962BC0492B00934F75 /* Network */,
+				8EF5096A2BC043E900934F75 /* Persistence.swift */,
+				8E19D6862BC70C71000CAD3B /* DaysOfWeek.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8EF509912BC0441600934F75 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8E19D6812BC48F1C000CAD3B /* TimetableViews */,
+				8EF509AA2BC157A000934F75 /* SettingsViews */,
+				8EF509632BC043E700934F75 /* ContentView.swift */,
+				8E19D67F2BC48F02000CAD3B /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8EF509962BC0492B00934F75 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8EF509972BC0495500934F75 /* NetworkData.swift */,
+				8EF509A62BC150FE00934F75 /* Links.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8EF509AA2BC157A000934F75 /* SettingsViews */ = {
+			isa = PBXGroup;
+			children = (
+				8EF509B02BC15D6600934F75 /* SettingsView.swift */,
+				8EF509AB2BC157C900934F75 /* SettingsYearView.swift */,
+				8EF0A22E2BC1E20F000E8F6C /* SettingsGorupsView.swift */,
+				8E19D67D2BC48088000CAD3B /* SettingsSemigroupsView.swift */,
+			);
+			path = SettingsViews;
+			sourceTree = "<group>";
+		};
+		8EF509AD2BC15B0400934F75 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8EF509AE2BC15B2B00934F75 /* FilterYearsSettings.swift */,
+				8EF0A2302BC1E624000E8F6C /* GroupsViewModel.swift */,
+				8E19D6882BC70F9A000CAD3B /* LecturesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,6 +258,9 @@
 			dependencies = (
 			);
 			name = "Orar Ubb";
+			packageProductDependencies = (
+				8EF5099A2BC0496900934F75 /* SwiftSoup */,
+			);
 			productName = "Orar Ubb";
 			productReference = 8EF5095E2BC043E700934F75 /* Orar Ubb.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +333,9 @@
 				Base,
 			);
 			mainGroup = 8EF509552BC043E700934F75;
+			packageReferences = (
+				8EF509992BC0496900934F75 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
 			productRefGroup = 8EF5095F2BC043E700934F75 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -264,9 +379,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EF5096B2BC043E900934F75 /* Persistence.swift in Sources */,
+				8E19D67A2BC453EC000CAD3B /* CoreDataModel.swift in Sources */,
+				8EF0A22F2BC1E20F000E8F6C /* SettingsGorupsView.swift in Sources */,
 				8EF5096E2BC043E900934F75 /* Orar_Ubb.xcdatamodeld in Sources */,
 				8EF509642BC043E700934F75 /* ContentView.swift in Sources */,
+				8E19D67C2BC4555E000CAD3B /* SettingsEntityModel.swift in Sources */,
+				8EF509AF2BC15B2B00934F75 /* FilterYearsSettings.swift in Sources */,
+				8EF0A2312BC1E624000E8F6C /* GroupsViewModel.swift in Sources */,
+				8E19D6852BC5C5C6000CAD3B /* TimeTableSchedule.swift in Sources */,
+				8E19D6832BC48F32000CAD3B /* TimeTableView.swift in Sources */,
+				8EF509A72BC150FE00934F75 /* Links.swift in Sources */,
+				8E19D6802BC48F02000CAD3B /* MainView.swift in Sources */,
+				8E19D6872BC70C71000CAD3B /* DaysOfWeek.swift in Sources */,
+				8E19D6892BC70F9A000CAD3B /* LecturesViewModel.swift in Sources */,
+				8E19D67E2BC48088000CAD3B /* SettingsSemigroupsView.swift in Sources */,
+				8EF509982BC0495500934F75 /* NetworkData.swift in Sources */,
+				8E627DFD2BC7294C00EB270F /* WeekPicker.swift in Sources */,
 				8EF509622BC043E700934F75 /* Orar_UbbApp.swift in Sources */,
+				8EF509B12BC15D6600934F75 /* SettingsView.swift in Sources */,
+				8EF509AC2BC157C900934F75 /* SettingsYearView.swift in Sources */,
+				8EF0A22D2BC1DDCB000E8F6C /* CoreDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +728,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8EF509992BC0496900934F75 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8EF5099A2BC0496900934F75 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8EF509992BC0496900934F75 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8EF5096C2BC043E900934F75 /* Orar_Ubb.xcdatamodeld */ = {

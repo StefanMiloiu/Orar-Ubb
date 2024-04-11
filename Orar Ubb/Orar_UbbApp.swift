@@ -9,12 +9,17 @@ import SwiftUI
 
 @main
 struct Orar_UbbApp: App {
-    let persistenceController = PersistenceController.shared
+
+    @StateObject var sharedViewModel = SharedGroupsViewModel()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, CoreDataProvider.shared.viewContext)
+                .environmentObject(sharedViewModel)
+                .onAppear {
+                    print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!")
+                }
         }
     }
 }
