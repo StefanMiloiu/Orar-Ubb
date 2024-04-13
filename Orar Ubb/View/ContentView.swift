@@ -22,8 +22,8 @@ struct ContentView: View {
     ContentView()
         .environment(\.managedObjectContext, CoreDataProvider.shared.viewContext)
         .environmentObject(SharedGroupsViewModel()) // Ensure the result of environmentObject is used
-//        .onAppear {
-//            print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!")
         .environmentObject(SharedLecturesViewModel())
-//        }
+        .onAppear {
+            print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!")
+        }
 }

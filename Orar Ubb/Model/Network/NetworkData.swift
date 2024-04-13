@@ -112,38 +112,40 @@ class NetworkData: ObservableObject {
             var counter = 0
             for table in tables {
                 counter += 1
-                if Int(group)! % 10 == counter {
-                    let rows = try table.select("tr")
-                    for row in rows {
-                        let cells = try row.select("td")
-                        
-                        if cells.count >= 7 {
+                if !group.isEmpty{
+                    if (Int(group) ?? 0) % 10 == counter {
+                        let rows = try table.select("tr")
+                        for row in rows {
+                            let cells = try row.select("td")
                             
-                            let day = try cells[0].text()
-                            let time = try cells[1].text()
-                            var parity = try cells[2].text()
-                            if parity != "sapt. 1" && parity != "sapt. 2"{
-                                parity = " "
-                            }
-                            let room = try cells[3].text()
-                            let format = try cells[4].text()
-                            let type = try cells[5].text()
-                            let subject = try cells[6].select("a").text()
-                            let lecturer = try cells[7].select("a").text()
-                            if format == "\(group)/\(semiGroup)" || format == Links.getNameFromLink(link: section) || format == group{
-                                let newLecture = Lecture(context: CoreDataProvider.shared.viewContext)
-                                newLecture.day = day
-                                newLecture.time = time
-                                newLecture.room = room
-                                newLecture.parity = parity
-                                newLecture.type = type
-                                newLecture.discipline = subject
-                                newLecture.professor = lecturer
-                                do {
-                                    lectures.append(newLecture)
-                                    try CoreDataProvider.shared.viewContext.save()
-                                } catch {
-                                    print("Error saving context")
+                            if cells.count >= 7 {
+                                
+                                let day = try cells[0].text()
+                                let time = try cells[1].text()
+                                var parity = try cells[2].text()
+                                if parity != "sapt. 1" && parity != "sapt. 2"{
+                                    parity = " "
+                                }
+                                let room = try cells[3].text()
+                                let format = try cells[4].text()
+                                let type = try cells[5].text()
+                                let subject = try cells[6].select("a").text()
+                                let lecturer = try cells[7].select("a").text()
+                                if format == "\(group)/\(semiGroup)" || format == Links.getNameFromLink(link: section) || format == group{
+                                    let newLecture = Lecture(context: CoreDataProvider.shared.viewContext)
+                                    newLecture.day = day
+                                    newLecture.time = time
+                                    newLecture.room = room
+                                    newLecture.parity = parity
+                                    newLecture.type = type
+                                    newLecture.discipline = subject
+                                    newLecture.professor = lecturer
+                                    do {
+                                        lectures.append(newLecture)
+                                        try CoreDataProvider.shared.viewContext.save()
+                                    } catch {
+                                        print("Error saving context")
+                                    }
                                 }
                             }
                         }

@@ -61,6 +61,7 @@ struct SettingsView: View {
     SettingsView()
         .environment(\.managedObjectContext, CoreDataProvider.shared.viewContext)
         .environmentObject(SharedGroupsViewModel()) // Ensure the result of environmentObject is used
+        .environmentObject(SharedLecturesViewModel())
 }
 
 

@@ -71,13 +71,14 @@ struct TimeTableSchedule: View {
     }
     @FetchRequest(fetchRequest: Lecture.all())
     private var lectures: FetchedResults<Lecture>
-    
+    @Binding var selectedWeek: String
     var body: some View {
         VStack {
             List {
                 ForEach(DaysOfWeek.days, id: \.self) { day in
                     Section {
-                        ForEach(sharedLecturesViewModel.lectures.filter {$0.day == day}) { lecture in
+                        ForEach(sharedLecturesViewModel.lectures.filter {$0.day == day}/*.sorted(by: {$0.time ?? "00" < $1.time ?? "00"}*/)
+                                { lecture in
                             ZStack{
                                 if sharedLecturesViewModel.lectures.filter({$0.day == day}).first == lecture {
                                     TopRoundedRectangle(cornerRadius: 0, roundedCorners: [.topLeft, .topRight])
@@ -96,10 +97,22 @@ struct TimeTableSchedule: View {
                                         .listRowInsets(EdgeInsets())
                                 }
                                 HStack(){
-                                    Text(lecture.time ?? "No time available!")
-                                        .font(.subheadline)
-                                        .foregroundColor(.white)
-                                        .padding(.leading, 10)
+                                    VStack {
+                                        Text(lecture.time ?? "No time available!")
+                                            .font(.subheadline)
+                                            .foregroundColor(.white)
+                                            .padding(.leading, 10)
+                                        if lecture.parity ?? "No Parity" == "sapt. 1" {
+                                            Text("Week 1")
+                                                .fontWeight(.medium)
+                                                .foregroundColor(selectedWeek == "sapt. 1" ? Color.clear : .white)
+                                                .padding(.leading, 10)
+                                        } else if lecture.parity ?? "No Parity" == "sapt. 2" {
+                                            Text("Week 2")
+                                                .fontWeight(.medium)
+                                                .foregroundColor(selectedWeek == "sapt. 2" ? Color.clear : .white)                                                .padding(.leading, 10)
+                                        }
+                                    }
                                     Spacer()
                                     VStack {
                                         Text("\(lecture.type ?? "No type"): \(lecture.discipline ?? "No discipline available!")")
@@ -130,7 +143,7 @@ struct TimeTableSchedule: View {
             .listRowBackground(Color.clear)
         }
         .onAppear {
-            print(lectures.count)
+//            print(lectures.count)
             sharedLecturesViewModel.lectures = Array(lectures)
         }
     }
@@ -139,7 +152,8 @@ struct TimeTableSchedule: View {
 
 
 #Preview {
-    TimeTableSchedule()
+    TimeTableSchedule(selectedWeek: .constant("1"))
         .environmentObject(SharedLecturesViewModel())
         .environment(\.managedObjectContext, CoreDataProvider.shared.viewContext)
 }
+

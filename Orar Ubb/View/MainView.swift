@@ -27,4 +27,7 @@ struct MainView: View {
 
 #Preview {
     MainView()
+        .environment(\.managedObjectContext, CoreDataProvider.shared.viewContext)
+        .environmentObject(SharedLecturesViewModel())
+        .environmentObject(SharedGroupsViewModel())
 }

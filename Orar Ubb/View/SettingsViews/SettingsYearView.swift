@@ -27,12 +27,14 @@ struct SettingsYearView: View {
                                     /*print(name)*/
                                     // Fetch html for the link
                                     networkData.getHTML(url: link) { html in
+                                        CoreDataProvider.deleteAllData()
                                         // Save or update the setting
                                         self.saveOrUpdateSetting(section: link, html: html ?? "No html", viewContext: self.viewContext)
                                         // Extract groups from the html
                                         DispatchQueue.main.async {
                                             sharedViewModel.groups = networkData.fetchGroupsForSection(html: html!)
                                         }
+                                        sharedViewModel.selectedSemiGroup = ""
                                     }
                                     dismiss()
                                 }, label: {

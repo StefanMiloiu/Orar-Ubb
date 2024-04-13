@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WeekPicker: View {
-    @State var selectedWeek = "1"
+    @Binding var selectedWeek: String
     @Binding var networkData: NetworkData
     
     @EnvironmentObject var sharedViewModel: SharedLecturesViewModel
@@ -38,16 +38,16 @@ struct WeekPicker: View {
             } else {
                 sharedViewModel.lectures = networkData.fetchScheduel(html: item?.html ?? "No html", section: item?.section ?? "No section", group: item?.group ?? "No group", semiGroup: item?.semiGroup ?? "No semigroup")
             }
-            print("Selected week: \(selectedWeek)")
+//            print("Selected week: \(selectedWeek)")
         }
         .pickerStyle(.segmented)
         .onAppear {
-            selectedWeek = "sapt. 1"
+            selectedWeek = " "
         }
     }
 }
 
 #Preview {
-    WeekPicker(networkData: .constant(NetworkData(urlString: Links.I2)))
+    WeekPicker(selectedWeek: .constant("1"),networkData: .constant(NetworkData(urlString: Links.I2)))
         .environmentObject(SharedLecturesViewModel())
 }
