@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct TimeTableView: View {
     @State var networkData = NetworkData(urlString: Links.I2)
@@ -61,6 +62,7 @@ struct TimeTableView: View {
                                 CoreDataProvider.deleteAllData()
                                 if item?.group != "" && item?.semiGroup != "" {
                                     sharedViewModel.lectures = (networkData.fetchScheduel(html: item?.html ?? "No html", section: item?.section ?? "No section", group: item?.group ?? "No group", semiGroup: item?.semiGroup ?? "No semigroup"))
+                                    WidgetCenter.shared.reloadTimelines(ofKind: "Widgets")
                                 }
                             }) {
                                 Image(systemName: "arrow.down.circle.dotted")

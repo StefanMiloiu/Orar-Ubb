@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct SettingsSemigroupsView: View {
     @EnvironmentObject var sharedViewModel: SharedGroupsViewModel
@@ -53,7 +54,7 @@ struct SettingsSemigroupsView: View {
                 save()
                 CoreDataProvider.deleteAllData()
                 sharedViewModelLectures.lectures = networkData.fetchScheduel(html: item?.html ?? "No html", section: item?.section ?? "No section", group: item?.group ?? "No group", semiGroup: item?.semiGroup ?? "No semigroup")
-//                print(sharedViewModelLectures.lectures)
+                WidgetCenter.shared.reloadTimelines(ofKind: "Widgets")
             }
         }
         .alert(isPresented: $alert) {
@@ -61,11 +62,7 @@ struct SettingsSemigroupsView: View {
         }
         .pickerStyle(.segmented)
         .onAppear {
-//            if let item = item, item.semiGroup != "" {
                 sharedViewModel.selectedSemiGroup = item?.semiGroup ?? "1"
-//            } else {
-//                selectedSemigroup = sharedViewModel.selectedSemiGroup
-//            }
         }
     }
 }

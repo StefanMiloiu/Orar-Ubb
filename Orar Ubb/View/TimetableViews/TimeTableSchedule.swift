@@ -77,8 +77,7 @@ struct TimeTableSchedule: View {
             List {
                 ForEach(DaysOfWeek.days, id: \.self) { day in
                     Section {
-                        ForEach(sharedLecturesViewModel.lectures.filter {$0.day == day}/*.sorted(by: {$0.time ?? "00" < $1.time ?? "00"}*/)
-                                { lecture in
+                        ForEach(sharedLecturesViewModel.lectures.filter { $0.day == day }.sorted(by: { $0.time ?? "00" < $1.time ?? "00" })) { lecture in
                             ZStack{
                                 if sharedLecturesViewModel.lectures.filter({$0.day == day}).first == lecture {
                                     TopRoundedRectangle(cornerRadius: 0, roundedCorners: [.topLeft, .topRight])

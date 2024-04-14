@@ -18,23 +18,18 @@ class CoreDataProvider {
     
     private init() {
         persistenceContainer = NSPersistentContainer(name: "Orar_Ubb")
+        let url = URL.storeURl(for: "group.com.miloiu.Orar-Ubb", databaseName: "Orar_Ubb")
+        let storeDescriptor = NSPersistentStoreDescription(url: url)
+        persistenceContainer.persistentStoreDescriptions = [storeDescriptor]
+        
         persistenceContainer.loadPersistentStores { storeDescription, error in
             if let error = error {
                 fatalError("Fatal error loading store: \(error.localizedDescription)")
             }
         }
+        persistenceContainer.viewContext.automaticallyMergesChangesFromParent = true
     }
     
-//    static func deleteAllItems() {
-//        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Lecture") // Replace "Lecture" with your entity name
-//        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-//        print("deleted \(batchDeleteRequest) items")
-//        do {
-//            try CoreDataProvider.shared.viewContext.execute(batchDeleteRequest)
-//        } catch {
-//            print("Error deleting all items: \(error)")
-//        }
-//    }
     static func deleteAllItems(){
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Lecture") // Replace "Lecture" with your entity name
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
@@ -65,5 +60,16 @@ class CoreDataProvider {
         } catch let error {
             print("Detele all data in Lecture error :", error)
         }
+    }
+    
+    
+}
+
+public extension URL {
+    static func storeURl(for appGroup: String, databaseName: String) -> URL {
+        guard let fileContainer = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroup) else {
+            fatalError("Shared file container could not be created.")
+        }
+        return fileContainer.appendingPathComponent("\(databaseName).sqlite")
     }
 }
