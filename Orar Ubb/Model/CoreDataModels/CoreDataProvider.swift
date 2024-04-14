@@ -62,6 +62,20 @@ class CoreDataProvider {
         }
     }
     
+    static func deleteAllDataFilter() {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DisciplineFilter")
+        fetchRequest.returnsObjectsAsFaults = false
+        do {
+            let results = try CoreDataProvider.shared.viewContext.fetch(fetchRequest)
+            for object in results {
+                guard let objectData = object as? NSManagedObject else {continue}
+                CoreDataProvider.shared.viewContext.delete(objectData)
+            }
+        } catch let error {
+            print("Detele all data in DisciplineFilter error :", error)
+        }
+    }
+    
     
 }
 

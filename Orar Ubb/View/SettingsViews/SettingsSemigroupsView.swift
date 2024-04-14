@@ -31,6 +31,14 @@ struct SettingsSemigroupsView: View {
             if let item = item, item.section != nil{
                 item.semiGroup = sharedViewModel.selectedSemiGroup
                 try CoreDataProvider.shared.viewContext.save()
+//                sharedViewModelLectures.disciplines = []
+//                for discipline in Set(sharedViewModelLectures.lectures.map({$0.discipline})) {
+//                    let newLecture = DisciplineFilter(context: CoreDataProvider.shared.viewContext)
+//                    newLecture.discipline = discipline
+//                    newLecture.checked = false
+//                    sharedViewModelLectures.disciplines.append(newLecture)
+//                    try CoreDataProvider.shared.viewContext.save()
+//                }
             } else {
                 alert.toggle()
             }
@@ -51,10 +59,10 @@ struct SettingsSemigroupsView: View {
                     .tag(semigroup)
             }
             .onChange(of: sharedViewModel.selectedSemiGroup) {
-                save()
                 CoreDataProvider.deleteAllData()
+                save()
                 sharedViewModelLectures.lectures = networkData.fetchScheduel(html: item?.html ?? "No html", section: item?.section ?? "No section", group: item?.group ?? "No group", semiGroup: item?.semiGroup ?? "No semigroup")
-                WidgetCenter.shared.reloadTimelines(ofKind: "Widgets")
+                WidgetCenter.shared.reloadAllTimelines()
             }
         }
         .alert(isPresented: $alert) {

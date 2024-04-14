@@ -40,11 +40,15 @@ struct SettingsGroupsView: View {
             }
         })
         .onAppear {
-            sharedViewModel.groups = networkData.fetchGroupsForSection(html: item?.html ?? "No html")
-            if item?.group != "" {
-                groupSelected = item?.group ?? "No group"
-            } else {
-                groupSelected = "Select"
+            DispatchQueue.main.async {
+                if item?.html != "" {
+                    sharedViewModel.groups = networkData.fetchGroupsForSection(html: item?.html ?? "No html")
+                    if item?.group != "" {
+                        groupSelected = item?.group ?? "No group"
+                    } else {
+                        groupSelected = "Select"
+                    }
+                }
             }
         }
     }

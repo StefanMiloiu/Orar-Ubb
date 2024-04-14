@@ -13,6 +13,7 @@ struct TimeTableView: View {
     @FetchRequest(fetchRequest: SettingEntity.all())
     private var items: FetchedResults<SettingEntity>
     @State var alert: Bool = false
+    @State var isShowingSheet = false
     private var item: SettingEntity? {
         if items.isEmpty {
             return nil
@@ -24,6 +25,8 @@ struct TimeTableView: View {
     @FetchRequest(fetchRequest: Lecture.all())
     private var lectures: FetchedResults<Lecture>
     @State var selectedWeek = "1"
+    @FetchRequest(fetchRequest: DisciplineFilter.all())
+    var disciplines: FetchedResults<DisciplineFilter>
     var body: some View {
         
         NavigationStack {
@@ -57,11 +60,12 @@ struct TimeTableView: View {
                 TimeTableSchedule(selectedWeek: $selectedWeek)
                     .navigationTitle("Schedule Babes-Bolyai University").navigationBarTitleDisplayMode(.inline)
                     .toolbar {
-                        ToolbarItem(placement: .navigationBarLeading) {
+                        ToolbarItem(placement: .topBarLeading) {
                             Button(action: {
                                 CoreDataProvider.deleteAllData()
                                 if item?.group != "" && item?.semiGroup != "" {
                                     sharedViewModel.lectures = (networkData.fetchScheduel(html: item?.html ?? "No html", section: item?.section ?? "No section", group: item?.group ?? "No group", semiGroup: item?.semiGroup ?? "No semigroup"))
+                                    sharedViewModel.disciplines = networkData.fetchDisciplinesFilter(lectures: sharedViewModel.lectures)
                                     WidgetCenter.shared.reloadTimelines(ofKind: "Widgets")
                                 }
                             }) {
@@ -69,20 +73,33 @@ struct TimeTableView: View {
                                     .font(.title)
                             }
                         }
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button(action: {
+                                isShowingSheet.toggle()
+                            }) {
+                                Image(systemName: "line.3.horizontal.decrease.circle")
+                                    .font(.title)
+                            }
+                        }
                     }
+                    .sheet(isPresented: $isShowingSheet, content: {
+                            FiltersView()
+                            .presentationDragIndicator(.visible)
+                            .presentationDetents([.medium, .large])
+                    })
             }
         }
         .onAppear {
-            sharedViewModel.lectures = Array(lectures)
-            //fetch again items
-//            let items = FetchRequest(fetchRequest: SettingEntity.all()).wrappedValue
-//            //assign the properties
-//            if let itemul = items.first {
-//                item?.section = itemul.section
-//                item?.group = itemul.group
-//                item?.semiGroup = itemul.semiGroup
-//                item?.html = itemul.html
-//            }
+//            print(lectures.count)
+            sharedViewModel.disciplines = Array(disciplines)
+            sharedViewModel.lectures = Array(lectures).filter { lecture in
+                // Filter to get checked disciplines
+                let checkedDisciplines = sharedViewModel.disciplines.filter { $0.checked }.map { $0.discipline }
+                
+                // Check if lecture's discipline is in checked disciplines
+                let isDisciplineChecked = !checkedDisciplines.contains(lecture.discipline)
+                return isDisciplineChecked
+            }
         }
         
     }

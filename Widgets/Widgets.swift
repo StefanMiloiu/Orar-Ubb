@@ -164,23 +164,35 @@ struct WidgetsEntryView : View {
                         Text(entry.lecture?.time ?? "00-00")
                             .font(.subheadline)
                             .fontWeight(.heavy)
-                            .foregroundStyle(!weekend ? .gray.opacity(0.9) : .clear)
+                            .foregroundStyle(!weekend ? .gray.opacity(0.75) : .clear)
                             .lineLimit(1)
                         Text(entry.lecture?.room ?? "No room")
                             .font(.subheadline)
-                            .foregroundStyle(!weekend ? .gray.opacity(0.9) : .clear)
+                            .foregroundStyle(!weekend ? .gray.opacity(0.75) : .clear)
                             .lineLimit(1)
+                        if entry.lecture?.parity == "sapt. 1" {
+                            Text("Week 1")
+                                .font(.subheadline)
+                                .foregroundStyle(!weekend ? .gray.opacity(0.75) : .clear)
+                                .lineLimit(1)
+                        } else if entry.lecture?.parity == "sapt. 2" {
+                            Text("Week 2")
+                                .font(.subheadline)
+                                .foregroundStyle(!weekend ? .gray.opacity(0.75) : .clear)
+                                .lineLimit(1)
+                        }
+                        
                     }
                     .padding(.bottom, 20)
                     Text(entry.lecture?.discipline ?? "No discipline")
                         .font(.subheadline)
-                        .foregroundStyle(!weekend ? .black.opacity(0.9) : .clear)
+                        .foregroundStyle(!weekend ? .gray.opacity(0.9) : .clear)
                         .multilineTextAlignment(.center)
                         .minimumScaleFactor(0.5)
                 }
                 Text(entry.lecture?.professor ?? "No professor")
                     .font(.system(size: 12))
-                    .foregroundStyle(!weekend ? .black.opacity(0.9) : .clear)
+                    .foregroundStyle(!weekend ? .gray.opacity(0.9) : .clear)
                     .lineLimit(1)
             }
         }

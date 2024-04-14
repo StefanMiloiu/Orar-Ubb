@@ -27,6 +27,8 @@
 		8E19D6872BC70C71000CAD3B /* DaysOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D6862BC70C71000CAD3B /* DaysOfWeek.swift */; };
 		8E19D6892BC70F9A000CAD3B /* LecturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D6882BC70F9A000CAD3B /* LecturesViewModel.swift */; };
 		8E627DFD2BC7294C00EB270F /* WeekPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E627DFC2BC7294C00EB270F /* WeekPicker.swift */; };
+		8E850C552BCBDFC400ADFA41 /* DisciplineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E850C542BCBDFC400ADFA41 /* DisciplineModel.swift */; };
+		8E850C572BCBE0AA00ADFA41 /* FiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E850C562BCBE0AA00ADFA41 /* FiltersView.swift */; };
 		8EF0A22D2BC1DDCB000E8F6C /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0A22C2BC1DDCB000E8F6C /* CoreDataProvider.swift */; };
 		8EF0A22F2BC1E20F000E8F6C /* SettingsGorupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0A22E2BC1E20F000E8F6C /* SettingsGorupsView.swift */; };
 		8EF0A2312BC1E624000E8F6C /* GroupsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0A2302BC1E624000E8F6C /* GroupsViewModel.swift */; };
@@ -102,6 +104,8 @@
 		8E19D6862BC70C71000CAD3B /* DaysOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOfWeek.swift; sourceTree = "<group>"; };
 		8E19D6882BC70F9A000CAD3B /* LecturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LecturesViewModel.swift; sourceTree = "<group>"; };
 		8E627DFC2BC7294C00EB270F /* WeekPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekPicker.swift; sourceTree = "<group>"; };
+		8E850C542BCBDFC400ADFA41 /* DisciplineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisciplineModel.swift; sourceTree = "<group>"; };
+		8E850C562BCBE0AA00ADFA41 /* FiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersView.swift; sourceTree = "<group>"; };
 		8EF0A22C2BC1DDCB000E8F6C /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
 		8EF0A22E2BC1E20F000E8F6C /* SettingsGorupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGorupsView.swift; sourceTree = "<group>"; };
 		8EF0A2302BC1E624000E8F6C /* GroupsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewModel.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 				8EF0A22C2BC1DDCB000E8F6C /* CoreDataProvider.swift */,
 				8E19D6792BC453EC000CAD3B /* CoreDataModel.swift */,
 				8E19D67B2BC4555E000CAD3B /* SettingsEntityModel.swift */,
+				8E850C542BCBDFC400ADFA41 /* DisciplineModel.swift */,
 			);
 			path = CoreDataModels;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				8E19D6822BC48F32000CAD3B /* TimeTableView.swift */,
 				8E19D6842BC5C5C6000CAD3B /* TimeTableSchedule.swift */,
 				8E627DFC2BC7294C00EB270F /* WeekPicker.swift */,
+				8E850C562BCBE0AA00ADFA41 /* FiltersView.swift */,
 			);
 			path = TimetableViews;
 			sourceTree = "<group>";
@@ -496,6 +502,7 @@
 				8EF5096B2BC043E900934F75 /* Persistence.swift in Sources */,
 				8E19D67A2BC453EC000CAD3B /* CoreDataModel.swift in Sources */,
 				8EF0A22F2BC1E20F000E8F6C /* SettingsGorupsView.swift in Sources */,
+				8E850C552BCBDFC400ADFA41 /* DisciplineModel.swift in Sources */,
 				8EF5096E2BC043E900934F75 /* Orar_Ubb.xcdatamodeld in Sources */,
 				8EF509642BC043E700934F75 /* ContentView.swift in Sources */,
 				8E0F0F412BCAD4C5008C1308 /* Widgets.swift in Sources */,
@@ -508,6 +515,7 @@
 				8E19D6802BC48F02000CAD3B /* MainView.swift in Sources */,
 				8E19D6872BC70C71000CAD3B /* DaysOfWeek.swift in Sources */,
 				8E19D6892BC70F9A000CAD3B /* LecturesViewModel.swift in Sources */,
+				8E850C572BCBE0AA00ADFA41 /* FiltersView.swift in Sources */,
 				8E19D67E2BC48088000CAD3B /* SettingsSemigroupsView.swift in Sources */,
 				8EF509982BC0495500934F75 /* NetworkData.swift in Sources */,
 				8E627DFD2BC7294C00EB270F /* WeekPicker.swift in Sources */,
@@ -751,18 +759,22 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-Ubb";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -782,18 +794,22 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-Ubb";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

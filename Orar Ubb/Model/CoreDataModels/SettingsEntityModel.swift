@@ -16,4 +16,3 @@ extension SettingEntity: Model{
 
 extension Lecture: Model{
 }
-

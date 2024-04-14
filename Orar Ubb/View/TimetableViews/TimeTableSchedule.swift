@@ -72,12 +72,29 @@ struct TimeTableSchedule: View {
     @FetchRequest(fetchRequest: Lecture.all())
     private var lectures: FetchedResults<Lecture>
     @Binding var selectedWeek: String
+//    var filteredLectures: [Lecture] {
+//        sharedLecturesViewModel.lectures.filter { $0.day == day && !sharedLecturesViewModel.disciplines.filter({$0.checked = true}).contains(where: $0.discipline) }
+//    }
+//    
+//    var sortedLectures: [Lecture] {
+//        filteredLectures.sorted(by: { $0.time ?? "00" < $1.time ?? "00" })
+//    }
     var body: some View {
         VStack {
             List {
                 ForEach(DaysOfWeek.days, id: \.self) { day in
                     Section {
-                        ForEach(sharedLecturesViewModel.lectures.filter { $0.day == day }.sorted(by: { $0.time ?? "00" < $1.time ?? "00" })) { lecture in
+                        ForEach(sharedLecturesViewModel.lectures.filter { lecture in
+                            let isDayMatching = lecture.day == day
+                            
+                            // Filter to get checked disciplines
+                            let checkedDisciplines = sharedLecturesViewModel.disciplines.filter { $0.checked }.map { $0.discipline }
+                            
+                            // Check if lecture's discipline is in checked disciplines
+                            let isDisciplineChecked = !checkedDisciplines.contains(lecture.discipline)
+                            
+                            return isDayMatching && isDisciplineChecked
+                        }.sorted(by: { $0.time ?? "00" < $1.time ?? "00" })) { lecture in
                             ZStack{
                                 if sharedLecturesViewModel.lectures.filter({$0.day == day}).first == lecture {
                                     TopRoundedRectangle(cornerRadius: 0, roundedCorners: [.topLeft, .topRight])
@@ -118,6 +135,8 @@ struct TimeTableSchedule: View {
                                             .font(.subheadline)
                                             .foregroundColor(.white)
                                             .multilineTextAlignment(.center)
+                                            .lineLimit(2)
+                                            .minimumScaleFactor(0.5)
                                         Text(lecture.professor ?? "No professor available!")
                                             .font(.subheadline)
                                             .foregroundColor(.white)
@@ -143,7 +162,15 @@ struct TimeTableSchedule: View {
         }
         .onAppear {
 //            print(lectures.count)
-            sharedLecturesViewModel.lectures = Array(lectures)
+            sharedLecturesViewModel.lectures = Array(lectures).filter { lecture in
+                // Filter to get checked disciplines
+                let checkedDisciplines = sharedLecturesViewModel.disciplines.filter { $0.checked }.map { $0.discipline }
+                
+                // Check if lecture's discipline is in checked disciplines
+                let isDisciplineChecked = !checkedDisciplines.contains(lecture.discipline)
+                
+                return isDisciplineChecked
+            }
         }
     }
 }
