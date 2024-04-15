@@ -45,9 +45,8 @@ struct SettingsView: View {
                         SettingsSemigroupsView(networkData: $networkData)
                             .listRowSeparator(.hidden)
                     }//: Section
-                    
+                    ColorPickersView()
                 }//: List
-                
             }//: VStack
             .navigationTitle("Settings")
         }//:NavigationStack

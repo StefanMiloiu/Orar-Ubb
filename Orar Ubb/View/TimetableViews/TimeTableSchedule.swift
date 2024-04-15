@@ -72,13 +72,12 @@ struct TimeTableSchedule: View {
     @FetchRequest(fetchRequest: Lecture.all())
     private var lectures: FetchedResults<Lecture>
     @Binding var selectedWeek: String
-//    var filteredLectures: [Lecture] {
-//        sharedLecturesViewModel.lectures.filter { $0.day == day && !sharedLecturesViewModel.disciplines.filter({$0.checked = true}).contains(where: $0.discipline) }
-//    }
-//    
-//    var sortedLectures: [Lecture] {
-//        filteredLectures.sorted(by: { $0.time ?? "00" < $1.time ?? "00" })
-//    }
+    
+    @FetchRequest(fetchRequest: DisciplineFilter.all())
+    private var discipline: FetchedResults<DisciplineFilter>
+    
+    @State var colorViewModel = CourseColorPickersViewModel()
+
     func checkSort(lecture1: Lecture, lecture2: Lecture) -> Bool {
         let startTime1Components = lecture1.time?.components(separatedBy: "-") ?? ["00"]
         let startTime2Components = lecture2.time?.components(separatedBy: "-") ?? ["00"]
@@ -88,6 +87,7 @@ struct TimeTableSchedule: View {
         
         return startTime1 < startTime2
     }
+    
     
     var body: some View {
         VStack {
@@ -109,17 +109,17 @@ struct TimeTableSchedule: View {
                             ZStack{
                                 if sharedLecturesViewModel.lectures.filter({$0.day == day}).first == lecture {
                                     TopRoundedRectangle(cornerRadius: 0, roundedCorners: [.topLeft, .topRight])
-                                        .fill(lecture.type == "Curs" ? Color.gray : Color.red)
+                                        .fill(colorViewModel.getColor(courseType: lecture.type ?? "No type for color"))
                                         .frame(height: 100)
                                         .listRowInsets(EdgeInsets())
                                 } else if sharedLecturesViewModel.lectures.filter({$0.day == day}).last == lecture {
                                     BottomRoundedRectangle(cornerRadius: 0, roundedCorners: [.bottomLeft, .bottomRight])
-                                        .fill(lecture.type == "Curs" ? Color.gray : Color.red)
+                                        .fill(colorViewModel.getColor(courseType: lecture.type ?? "No type for color"))
                                         .frame(height: 100)
                                         .listRowInsets(EdgeInsets())
                                 } else {
                                     RoundedRectangle(cornerRadius: 0)
-                                        .fill(lecture.type == "Curs" ? Color.gray : Color.red)
+                                        .fill(colorViewModel.getColor(courseType: lecture.type ?? "No type for color"))
                                         .frame(height: 100)
                                         .listRowInsets(EdgeInsets())
                                 }
@@ -172,7 +172,7 @@ struct TimeTableSchedule: View {
             .listRowBackground(Color.clear)
         }
         .onAppear {
-//            print(lectures.count)
+            sharedLecturesViewModel.disciplines = Array(discipline)
             sharedLecturesViewModel.lectures = Array(lectures).filter { lecture in
                 // Filter to get checked disciplines
                 let checkedDisciplines = sharedLecturesViewModel.disciplines.filter { $0.checked }.map { $0.discipline }

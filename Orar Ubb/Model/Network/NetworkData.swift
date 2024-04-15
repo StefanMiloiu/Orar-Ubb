@@ -8,6 +8,8 @@
 import Foundation
 import SwiftSoup
 import CoreData
+import Network
+
 //Get the html from a website
 
 class NetworkData: ObservableObject {
@@ -21,7 +23,42 @@ class NetworkData: ObservableObject {
         self.urlString = urlString
     }
     
-    
+//    func getHTML(url: String, completion: @escaping (String?) -> Void) {
+//        let monitor = NWPathMonitor()
+//        
+//        monitor.pathUpdateHandler = { path in
+//            if path.status == .satisfied {
+//                guard let url = URL(string: url) else {
+//                    completion(nil)
+//                    return
+//                }
+//                
+//                let task = URLSession.shared.dataTask(with: url) { data, response, error in
+//                    if let error = error {
+//                        print("Error: \(error)")
+//                        completion(nil)
+//                        return
+//                    }
+//                    
+//                    if let data = data, let htmlString = String(data: data, encoding: .utf8) {
+//                        NetworkData.html = htmlString
+//                        completion(htmlString)
+//                    } else {
+//                        completion(nil)
+//                    }
+//                }
+//                
+//                task.resume()
+//            } else {
+//                // Handle no internet connection scenario
+//                print("No internet connection.")
+//                completion(nil)
+//            }
+//        }
+//        
+//        let queue = DispatchQueue(label: "NetworkMonitor")
+//        monitor.start(queue: queue)
+//    }
     func getHTML(url: String, completion: @escaping (String?) -> Void) {
         guard let url = URL(string: url) else {
             completion(nil)

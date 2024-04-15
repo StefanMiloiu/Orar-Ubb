@@ -10,7 +10,7 @@ struct SettingsYearView: View {
     @Environment(\.dismiss) var dismiss
     let filter = FilterYearsSettings()
     @Binding var networkData: NetworkData
-    @State var savingErrorAlert = false
+    @State var internetErrorAlert = false
     
     //MARK: - Body
     var body: some View {
@@ -31,12 +31,16 @@ struct SettingsYearView: View {
                                         // Save or update the setting
                                         self.saveOrUpdateSetting(section: link, html: html ?? "No html", viewContext: self.viewContext)
                                         // Extract groups from the html
-                                        DispatchQueue.main.async {
-                                            sharedViewModel.groups = networkData.fetchGroupsForSection(html: html!)
-                                            sharedViewModel.selectedSemiGroup = ""
+                                        if html == nil {
+                                            internetErrorAlert.toggle()
+                                        } else {
+                                            DispatchQueue.main.async {
+                                                sharedViewModel.groups = networkData.fetchGroupsForSection(html: html ?? "No html found")
+                                                sharedViewModel.selectedSemiGroup = ""
+                                                dismiss()
+                                            }
                                         }
                                     }
-                                    dismiss()
                                 }, label: {
                                     Text(filter.parseURL(url: link) ?? "No name")
                                         .padding(.leading, 10)
@@ -50,8 +54,8 @@ struct SettingsYearView: View {
                 }
             }
         }
-        .alert(isPresented: $savingErrorAlert) {
-            Alert(title: Text("Error"), message: Text("Failed to save the setting"), dismissButton: .default(Text("OK")))
+        .alert(isPresented: $internetErrorAlert) {
+            Alert(title: Text("Error"), message: Text("Failed to save settings, internet errore!"), dismissButton: .default(Text("OK")))
         }
         .navigationTitle("Settings")
     }
@@ -71,7 +75,6 @@ struct SettingsYearView: View {
             try viewContext.save()
         } catch {
             let nsError = error as NSError
-            savingErrorAlert = true
             print("Unresolved error \(nsError)")
         }
     }

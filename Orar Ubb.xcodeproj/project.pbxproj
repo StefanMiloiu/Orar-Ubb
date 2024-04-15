@@ -26,6 +26,9 @@
 		8E19D6852BC5C5C6000CAD3B /* TimeTableSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D6842BC5C5C6000CAD3B /* TimeTableSchedule.swift */; };
 		8E19D6872BC70C71000CAD3B /* DaysOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D6862BC70C71000CAD3B /* DaysOfWeek.swift */; };
 		8E19D6892BC70F9A000CAD3B /* LecturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D6882BC70F9A000CAD3B /* LecturesViewModel.swift */; };
+		8E221FC62BCD7FA1008022E4 /* CourseColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E221FC52BCD7FA1008022E4 /* CourseColorPicker.swift */; };
+		8E221FC82BCD82ED008022E4 /* ColorFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E221FC72BCD82ED008022E4 /* ColorFilterViewModel.swift */; };
+		8E221FCA2BCD8391008022E4 /* ColorFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E221FC92BCD8391008022E4 /* ColorFilterModel.swift */; };
 		8E627DFD2BC7294C00EB270F /* WeekPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E627DFC2BC7294C00EB270F /* WeekPicker.swift */; };
 		8E850C552BCBDFC400ADFA41 /* DisciplineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E850C542BCBDFC400ADFA41 /* DisciplineModel.swift */; };
 		8E850C572BCBE0AA00ADFA41 /* FiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E850C562BCBE0AA00ADFA41 /* FiltersView.swift */; };
@@ -103,6 +106,9 @@
 		8E19D6842BC5C5C6000CAD3B /* TimeTableSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableSchedule.swift; sourceTree = "<group>"; };
 		8E19D6862BC70C71000CAD3B /* DaysOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOfWeek.swift; sourceTree = "<group>"; };
 		8E19D6882BC70F9A000CAD3B /* LecturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LecturesViewModel.swift; sourceTree = "<group>"; };
+		8E221FC52BCD7FA1008022E4 /* CourseColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseColorPicker.swift; sourceTree = "<group>"; };
+		8E221FC72BCD82ED008022E4 /* ColorFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFilterViewModel.swift; sourceTree = "<group>"; };
+		8E221FC92BCD8391008022E4 /* ColorFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFilterModel.swift; sourceTree = "<group>"; };
 		8E627DFC2BC7294C00EB270F /* WeekPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekPicker.swift; sourceTree = "<group>"; };
 		8E850C542BCBDFC400ADFA41 /* DisciplineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisciplineModel.swift; sourceTree = "<group>"; };
 		8E850C562BCBE0AA00ADFA41 /* FiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersView.swift; sourceTree = "<group>"; };
@@ -190,6 +196,7 @@
 				8E19D6792BC453EC000CAD3B /* CoreDataModel.swift */,
 				8E19D67B2BC4555E000CAD3B /* SettingsEntityModel.swift */,
 				8E850C542BCBDFC400ADFA41 /* DisciplineModel.swift */,
+				8E221FC92BCD8391008022E4 /* ColorFilterModel.swift */,
 			);
 			path = CoreDataModels;
 			sourceTree = "<group>";
@@ -203,6 +210,14 @@
 				8E850C562BCBE0AA00ADFA41 /* FiltersView.swift */,
 			);
 			path = TimetableViews;
+			sourceTree = "<group>";
+		};
+		8E221FC42BCD7F87008022E4 /* ColorPickers */ = {
+			isa = PBXGroup;
+			children = (
+				8E221FC52BCD7FA1008022E4 /* CourseColorPicker.swift */,
+			);
+			path = ColorPickers;
 			sourceTree = "<group>";
 		};
 		8EF509552BC043E700934F75 = {
@@ -301,6 +316,7 @@
 		8EF509AA2BC157A000934F75 /* SettingsViews */ = {
 			isa = PBXGroup;
 			children = (
+				8E221FC42BCD7F87008022E4 /* ColorPickers */,
 				8EF509B02BC15D6600934F75 /* SettingsView.swift */,
 				8EF509AB2BC157C900934F75 /* SettingsYearView.swift */,
 				8EF0A22E2BC1E20F000E8F6C /* SettingsGorupsView.swift */,
@@ -315,6 +331,7 @@
 				8EF509AE2BC15B2B00934F75 /* FilterYearsSettings.swift */,
 				8EF0A2302BC1E624000E8F6C /* GroupsViewModel.swift */,
 				8E19D6882BC70F9A000CAD3B /* LecturesViewModel.swift */,
+				8E221FC72BCD82ED008022E4 /* ColorFilterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -505,6 +522,8 @@
 				8E850C552BCBDFC400ADFA41 /* DisciplineModel.swift in Sources */,
 				8EF5096E2BC043E900934F75 /* Orar_Ubb.xcdatamodeld in Sources */,
 				8EF509642BC043E700934F75 /* ContentView.swift in Sources */,
+				8E221FC82BCD82ED008022E4 /* ColorFilterViewModel.swift in Sources */,
+				8E221FCA2BCD8391008022E4 /* ColorFilterModel.swift in Sources */,
 				8E0F0F412BCAD4C5008C1308 /* Widgets.swift in Sources */,
 				8E19D67C2BC4555E000CAD3B /* SettingsEntityModel.swift in Sources */,
 				8EF509AF2BC15B2B00934F75 /* FilterYearsSettings.swift in Sources */,
@@ -520,6 +539,7 @@
 				8EF509982BC0495500934F75 /* NetworkData.swift in Sources */,
 				8E627DFD2BC7294C00EB270F /* WeekPicker.swift in Sources */,
 				8EF509622BC043E700934F75 /* Orar_UbbApp.swift in Sources */,
+				8E221FC62BCD7FA1008022E4 /* CourseColorPicker.swift in Sources */,
 				8EF509B12BC15D6600934F75 /* SettingsView.swift in Sources */,
 				8EF509AC2BC157C900934F75 /* SettingsYearView.swift in Sources */,
 				8EF0A22D2BC1DDCB000E8F6C /* CoreDataProvider.swift in Sources */,
@@ -572,7 +592,7 @@
 				CODE_SIGN_ENTITLEMENTS = WidgetsExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 8B683A2ABG;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -595,7 +615,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -607,7 +627,7 @@
 				CODE_SIGN_ENTITLEMENTS = WidgetsExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 8B683A2ABG;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -630,7 +650,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -761,11 +781,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Orar Ubb/Orar Ubb.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Orar Ubb/Preview Content\"";
 				DEVELOPMENT_TEAM = 8B683A2ABG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -784,7 +805,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -796,11 +817,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Orar Ubb/Orar Ubb.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Orar Ubb/Preview Content\"";
 				DEVELOPMENT_TEAM = 8B683A2ABG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -819,7 +841,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -836,6 +858,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-UbbTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -856,6 +882,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-UbbTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -874,6 +904,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-UbbUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -892,6 +926,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-UbbUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
