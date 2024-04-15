@@ -45,9 +45,8 @@ class CoreDataProvider {
         } catch {
             print("Error deleting all items: \(error)")
         }
-        
     }
-    
+
     static func deleteAllData() {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Lecture")
         fetchRequest.returnsObjectsAsFaults = false

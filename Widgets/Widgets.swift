@@ -56,12 +56,15 @@ struct WidgetTools {
     //    }
     
     func checkBetween(interval: String) -> Bool {
-        let intervalArray = interval.components(separatedBy: "-")
+        var intervalArray = interval.components(separatedBy: "-")
         guard intervalArray.count == 2 else { return false }
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH"
         
+        if intervalArray[0].count == 1 {
+            intervalArray[0] = "0" + intervalArray[0]
+        }
         let startHour = Int(intervalArray[0]) ?? 0
         let endHour = Int(intervalArray[1]) ?? 0
         
@@ -90,30 +93,13 @@ struct Provider: TimelineProvider {
     private let context = CoreDataProvider.shared.viewContext
     
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), lecture: nil)
+        SimpleEntry(date: Date(), lecture: Lecture(context: CoreDataProvider.shared.viewContext))
     }
     
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), lecture: nil)
+        let entry = SimpleEntry(date: Date(), lecture: Lecture(context: CoreDataProvider.shared.viewContext))
         completion(entry)
     }
-    
-//    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-//        // Perform Core Data operations on the main queue context
-//        // Note: You may want to move this to a background context if fetching large amounts of data
-//        do {
-//            let lectures = try container.viewContext.fetch(Lecture.all()).filter( { $0.day == "Luni" && tools.checkBetween(interval: $0.time ?? "00-00") /*tools.dayDictionary[tools.getWeekFromDate()]*/ } )
-//            print("Fetched \(lectures.count) lectures.")
-//            // Create timeline entries with fetched lectures
-//            let entries: [SimpleEntry] = [SimpleEntry(date: Date(), lectures: lectures)]
-//            let refreshDate = Date().advanced(by: 2 * 60 * 60) // Refresh every 2 hours
-//            let timeline = Timeline(entries: entries, policy: .after(refreshDate))
-//            completion(timeline)
-//        } catch {
-//            print("Failed to fetch lectures: \(error)")
-//            completion(Timeline(entries: [], policy: .atEnd))
-//        }
-//    }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         // Perform Core Data operations on the main queue context
@@ -123,7 +109,15 @@ struct Provider: TimelineProvider {
             print("Fetched \(lectures.count) lectures.")
             // Create timeline entries with fetched lectures
             let entries: [SimpleEntry] = [SimpleEntry(date: Date(), lecture: lectures.count > 0 ? lectures[0] : nil)]
-            let refreshDate = Date().advanced(by: 2 * 60 * 60) // Refresh every 2 hours
+            //            let refreshDate = Date().advanced(by: 2 * 60 * 60) // Refresh every 2 hours
+            // Calculate the next hour for refresh
+            let currentDate = Date()
+            let calendar = Calendar.current
+            let currentHour = calendar.component(.hour, from: currentDate)
+            let nextHour = currentHour + 1
+            let nextHourDate = calendar.date(bySettingHour: nextHour, minute: 0, second: 0, of: currentDate) ?? Date()
+            let refreshDate = nextHourDate
+            
             let timeline = Timeline(entries: entries, policy: .after(refreshDate))
             completion(timeline)
         } catch {
@@ -221,7 +215,7 @@ struct Widgets: Widget {
                     .background()
             }
         }
-        .supportedFamilies([.systemSmall])
+        //        .supportedFamilies([.systemSmall])
         .configurationDisplayName("Ubb Schedule")
         .description("Widget for current day schedule.")
     }
@@ -229,7 +223,7 @@ struct Widgets: Widget {
 
 
 
-#Preview(as: .systemMedium) {
+#Preview(as: .systemSmall) {
     Widgets()
 } timeline: {
     SimpleEntry(date: Date(), lecture: Lecture(context: CoreDataProvider.shared.viewContext))

@@ -79,6 +79,16 @@ struct TimeTableSchedule: View {
 //    var sortedLectures: [Lecture] {
 //        filteredLectures.sorted(by: { $0.time ?? "00" < $1.time ?? "00" })
 //    }
+    func checkSort(lecture1: Lecture, lecture2: Lecture) -> Bool {
+        let startTime1Components = lecture1.time?.components(separatedBy: "-") ?? ["00"]
+        let startTime2Components = lecture2.time?.components(separatedBy: "-") ?? ["00"]
+        
+        let startTime1 = Int(startTime1Components[0]) ?? 0
+        let startTime2 = Int(startTime2Components[0]) ?? 0
+        
+        return startTime1 < startTime2
+    }
+    
     var body: some View {
         VStack {
             List {
@@ -94,7 +104,8 @@ struct TimeTableSchedule: View {
                             let isDisciplineChecked = !checkedDisciplines.contains(lecture.discipline)
                             
                             return isDayMatching && isDisciplineChecked
-                        }.sorted(by: { $0.time ?? "00" < $1.time ?? "00" })) { lecture in
+                        }.sorted(by: checkSort), id: \.self)
+                        { lecture in
                             ZStack{
                                 if sharedLecturesViewModel.lectures.filter({$0.day == day}).first == lecture {
                                     TopRoundedRectangle(cornerRadius: 0, roundedCorners: [.topLeft, .topRight])

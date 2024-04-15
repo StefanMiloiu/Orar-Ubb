@@ -159,10 +159,10 @@ class NetworkData: ObservableObject {
         }
         return lectures
     }
-    
+ 
     func fetchDisciplinesFilter(lectures: [Lecture]) -> [DisciplineFilter] {
         CoreDataProvider.deleteAllDataFilter()
-        var disciplines: [DisciplineFilter] = []
+        let disciplines: [DisciplineFilter] = []
         for discipline in Set(lectures.map( {$0.discipline ?? "Disciplina"} )) {
             let newDiscipline = DisciplineFilter(context: CoreDataProvider.shared.viewContext)
             newDiscipline.discipline = discipline

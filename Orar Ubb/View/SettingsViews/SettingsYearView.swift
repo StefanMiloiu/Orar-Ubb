@@ -33,8 +33,8 @@ struct SettingsYearView: View {
                                         // Extract groups from the html
                                         DispatchQueue.main.async {
                                             sharedViewModel.groups = networkData.fetchGroupsForSection(html: html!)
+                                            sharedViewModel.selectedSemiGroup = ""
                                         }
-                                        sharedViewModel.selectedSemiGroup = ""
                                     }
                                     dismiss()
                                 }, label: {

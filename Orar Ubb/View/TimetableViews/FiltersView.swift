@@ -16,13 +16,32 @@ struct FiltersView: View {
     var body: some View {
         VStack{
             List{
-                ForEach(viewModel.disciplines.indices, id: \.self) { index in
-                    let discipline = viewModel.disciplines[index]
-                    Toggle(isOn: $viewModel.disciplines[index].checked, label: {
-                        Text(/*\(index)-*/"\(discipline.discipline ?? "Discipline")")
-                    })
-                    .onChange(of: viewModel.disciplines[index].checked) {
-                        save(filter: viewModel.disciplines[index])
+                Section {
+                    HStack{
+                        Spacer()
+                        Text("Check the courses you want to hide.")
+                            .font(.headline)
+                            .padding()
+                            .multilineTextAlignment(.center)
+                        Image(systemName: "eye.slash")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 50, height: 50)
+                            .padding()
+                        
+                        Spacer()
+                    }
+                }
+                .listRowBackground(Color.clear)
+                Section {
+                    ForEach(viewModel.disciplines.indices, id: \.self) { index in
+                        let discipline = viewModel.disciplines[index]
+                        Toggle(isOn: $viewModel.disciplines[index].checked, label: {
+                            Text(/*\(index)-*/"\(discipline.discipline ?? "Discipline")")
+                        })
+                        .onChange(of: viewModel.disciplines[index].checked) {
+                            save(filter: viewModel.disciplines[index])
+                        }
                     }
                 }
             }
