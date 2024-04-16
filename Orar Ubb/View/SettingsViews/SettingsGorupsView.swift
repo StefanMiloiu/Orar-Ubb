@@ -31,6 +31,7 @@ struct SettingsGroupsView: View {
                     .tag(group.components(separatedBy: " ")[1])
             }
         }
+        .tint(.primary)
         .onChange(of: groupSelected, {
             item?.group = groupSelected
             do {

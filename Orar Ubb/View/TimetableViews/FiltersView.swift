@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct FiltersView: View {
     @EnvironmentObject var viewModel: SharedLecturesViewModel
@@ -41,6 +42,7 @@ struct FiltersView: View {
                         })
                         .onChange(of: viewModel.disciplines[index].checked) {
                             save(filter: viewModel.disciplines[index])
+                            WidgetCenter.shared.reloadAllTimelines()
                         }
                     }
                 }

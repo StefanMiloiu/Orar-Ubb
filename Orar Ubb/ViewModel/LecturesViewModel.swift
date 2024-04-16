@@ -12,3 +12,4 @@ class SharedLecturesViewModel: ObservableObject {
     @Published var lectures: [Lecture] = []
     @Published var disciplines: [DisciplineFilter] = []
 }
+

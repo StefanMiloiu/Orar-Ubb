@@ -26,9 +26,13 @@
 		8E19D6852BC5C5C6000CAD3B /* TimeTableSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D6842BC5C5C6000CAD3B /* TimeTableSchedule.swift */; };
 		8E19D6872BC70C71000CAD3B /* DaysOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D6862BC70C71000CAD3B /* DaysOfWeek.swift */; };
 		8E19D6892BC70F9A000CAD3B /* LecturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D6882BC70F9A000CAD3B /* LecturesViewModel.swift */; };
+		8E1EE14B2BCE48E500579416 /* DailyWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42175A2BCE472700BBA53B /* DailyWidgets.swift */; };
 		8E221FC62BCD7FA1008022E4 /* CourseColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E221FC52BCD7FA1008022E4 /* CourseColorPicker.swift */; };
 		8E221FC82BCD82ED008022E4 /* ColorFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E221FC72BCD82ED008022E4 /* ColorFilterViewModel.swift */; };
 		8E221FCA2BCD8391008022E4 /* ColorFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E221FC92BCD8391008022E4 /* ColorFilterModel.swift */; };
+		8E3675502BCE845600EB3BD9 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36754F2BCE845600EB3BD9 /* Tools.swift */; };
+		8E3675512BCE845600EB3BD9 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E36754F2BCE845600EB3BD9 /* Tools.swift */; };
+		8E42175B2BCE472700BBA53B /* DailyWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E42175A2BCE472700BBA53B /* DailyWidgets.swift */; };
 		8E627DFD2BC7294C00EB270F /* WeekPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E627DFC2BC7294C00EB270F /* WeekPicker.swift */; };
 		8E850C552BCBDFC400ADFA41 /* DisciplineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E850C542BCBDFC400ADFA41 /* DisciplineModel.swift */; };
 		8E850C572BCBE0AA00ADFA41 /* FiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E850C562BCBE0AA00ADFA41 /* FiltersView.swift */; };
@@ -109,6 +113,8 @@
 		8E221FC52BCD7FA1008022E4 /* CourseColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseColorPicker.swift; sourceTree = "<group>"; };
 		8E221FC72BCD82ED008022E4 /* ColorFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFilterViewModel.swift; sourceTree = "<group>"; };
 		8E221FC92BCD8391008022E4 /* ColorFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFilterModel.swift; sourceTree = "<group>"; };
+		8E36754F2BCE845600EB3BD9 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		8E42175A2BCE472700BBA53B /* DailyWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWidgets.swift; sourceTree = "<group>"; };
 		8E627DFC2BC7294C00EB270F /* WeekPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekPicker.swift; sourceTree = "<group>"; };
 		8E850C542BCBDFC400ADFA41 /* DisciplineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisciplineModel.swift; sourceTree = "<group>"; };
 		8E850C562BCBE0AA00ADFA41 /* FiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersView.swift; sourceTree = "<group>"; };
@@ -185,6 +191,8 @@
 				8E0F0F322BCAC178008C1308 /* Widgets.swift */,
 				8E0F0F342BCAC17A008C1308 /* Assets.xcassets */,
 				8E0F0F362BCAC17A008C1308 /* Info.plist */,
+				8E42175A2BCE472700BBA53B /* DailyWidgets.swift */,
+				8E36754F2BCE845600EB3BD9 /* Tools.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -509,6 +517,8 @@
 				8E0F0F332BCAC178008C1308 /* Widgets.swift in Sources */,
 				8E0F0F432BCAD6E8008C1308 /* CoreDataProvider.swift in Sources */,
 				8E0F0F472BCAE220008C1308 /* Orar_Ubb.xcdatamodeld in Sources */,
+				8E1EE14B2BCE48E500579416 /* DailyWidgets.swift in Sources */,
+				8E3675512BCE845600EB3BD9 /* Tools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +532,7 @@
 				8E850C552BCBDFC400ADFA41 /* DisciplineModel.swift in Sources */,
 				8EF5096E2BC043E900934F75 /* Orar_Ubb.xcdatamodeld in Sources */,
 				8EF509642BC043E700934F75 /* ContentView.swift in Sources */,
+				8E3675502BCE845600EB3BD9 /* Tools.swift in Sources */,
 				8E221FC82BCD82ED008022E4 /* ColorFilterViewModel.swift in Sources */,
 				8E221FCA2BCD8391008022E4 /* ColorFilterModel.swift in Sources */,
 				8E0F0F412BCAD4C5008C1308 /* Widgets.swift in Sources */,
@@ -543,6 +554,7 @@
 				8EF509B12BC15D6600934F75 /* SettingsView.swift in Sources */,
 				8EF509AC2BC157C900934F75 /* SettingsYearView.swift in Sources */,
 				8EF0A22D2BC1DDCB000E8F6C /* CoreDataProvider.swift in Sources */,
+				8E42175B2BCE472700BBA53B /* DailyWidgets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,13 +604,14 @@
 				CODE_SIGN_ENTITLEMENTS = WidgetsExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 8B683A2ABG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Widgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Widgets;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -627,13 +640,14 @@
 				CODE_SIGN_ENTITLEMENTS = WidgetsExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 8B683A2ABG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Widgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Widgets;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -706,7 +720,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -763,7 +777,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -781,7 +795,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Orar Ubb/Orar Ubb.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Orar Ubb/Preview Content\"";
 				DEVELOPMENT_TEAM = 8B683A2ABG;
 				ENABLE_PREVIEWS = YES;
@@ -792,6 +806,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -817,7 +832,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Orar Ubb/Orar Ubb.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Orar Ubb/Preview Content\"";
 				DEVELOPMENT_TEAM = 8B683A2ABG;
 				ENABLE_PREVIEWS = YES;
@@ -828,6 +843,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

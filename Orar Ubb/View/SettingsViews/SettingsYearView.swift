@@ -55,7 +55,7 @@ struct SettingsYearView: View {
             }
         }
         .alert(isPresented: $internetErrorAlert) {
-            Alert(title: Text("Error"), message: Text("Failed to save settings, internet errore!"), dismissButton: .default(Text("OK")))
+            Alert(title: Text("Error"), message: Text("Failed to save settings, internet error!"), dismissButton: .default(Text("OK")))
         }
         .navigationTitle("Settings")
     }
