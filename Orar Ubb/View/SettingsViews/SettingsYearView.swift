@@ -5,6 +5,7 @@ struct SettingsYearView: View {
     //MARK: - Properties
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var sharedViewModel: SharedGroupsViewModel
+    @EnvironmentObject var viewModel: CourseColorPickersViewModel
     @FetchRequest(fetchRequest: SettingEntity.all())
     private var items: FetchedResults<SettingEntity>
     @Environment(\.dismiss) var dismiss
@@ -24,27 +25,40 @@ struct SettingsYearView: View {
                            !Links.links.isEmpty && nameIndex < Links.links.count {
                             ForEach(Links.links[nameIndex], id: \.self) { link in
                                 Button(action: {
-                                    /*print(name)*/
                                     // Fetch html for the link
+//                                    networkData.getHTML(url: link) { html in
+//                                        CoreDataProvider.deleteAllData()
+//                                        // Save or update the setting
+//                                        self.saveOrUpdateSetting(section: link, html: html ?? "No html", viewContext: self.viewContext)
+//                                        // Extract groups from the html
+//                                        if html == nil {
+//                                            internetErrorAlert.toggle()
+//                                        } else {
+//                                            DispatchQueue.main.async {
+//                                                sharedViewModel.groups = networkData.fetchGroupsForSection(html: html ?? "No html found")
+//                                                sharedViewModel.selectedSemiGroup = ""
+//                                                dismiss()
+////                                                viewModel.disciplines = networkData.fetch
+//                                            }
+//                                        }
+//                                    }
                                     networkData.getHTML(url: link) { html in
-                                        CoreDataProvider.deleteAllData()
-                                        // Save or update the setting
-                                        self.saveOrUpdateSetting(section: link, html: html ?? "No html", viewContext: self.viewContext)
-                                        // Extract groups from the html
-                                        if html == nil {
-                                            internetErrorAlert.toggle()
-                                        } else {
-                                            DispatchQueue.main.async {
-                                                sharedViewModel.groups = networkData.fetchGroupsForSection(html: html ?? "No html found")
+                                        DispatchQueue.main.async {
+                                            if let html = html {
+                                                // Save or update the setting
+                                                saveOrUpdateSetting(section: link, html: html, viewContext: viewContext)
+                                                sharedViewModel.groups = networkData.fetchGroupsForSection(html: html)
                                                 sharedViewModel.selectedSemiGroup = ""
                                                 dismiss()
+                                            } else {
+                                                internetErrorAlert.toggle()
                                             }
                                         }
                                     }
                                 }, label: {
                                     Text(filter.parseURL(url: link) ?? "No name")
                                         .padding(.leading, 10)
-                                        .tint(.red.opacity(0.7))
+                                        .tint(viewModel.getColorTint())
                                 })
                             }
                         } else {
@@ -60,25 +74,42 @@ struct SettingsYearView: View {
         .navigationTitle("Settings")
     }
     
+//    func saveOrUpdateSetting(section: String, html: String, viewContext: NSManagedObjectContext) {
+//        if items.count == 0 {
+//            let newSetting = SettingEntity(context: viewContext)
+//            newSetting.section = section
+//            newSetting.group = ""
+//            newSetting.semiGroup = ""
+//            newSetting.html = html
+//        } else {
+//            items[0].section = section
+//            items[0].html = html
+//        }
+//        do {
+//            try viewContext.save()
+//        } catch {
+//            let nsError = error as NSError
+//            print("Unresolved error \(nsError)")
+//        }
+//    }
     func saveOrUpdateSetting(section: String, html: String, viewContext: NSManagedObjectContext) {
-        if items.count == 0 {
-            let newSetting = SettingEntity(context: viewContext)
-            newSetting.section = section
-            newSetting.group = ""
-            newSetting.semiGroup = ""
-            newSetting.html = html
-        } else {
-            items[0].section = section
-            items[0].html = html
-        }
         do {
+            if let existingSetting = items.first {
+                existingSetting.section = section
+                existingSetting.html = html
+            } else {
+                let newSetting = SettingEntity(context: viewContext)
+                newSetting.section = section
+                newSetting.group = ""
+                newSetting.semiGroup = ""
+                newSetting.html = html
+            }
             try viewContext.save()
         } catch {
             let nsError = error as NSError
             print("Unresolved error \(nsError)")
         }
     }
-
 }
 
 

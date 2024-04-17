@@ -66,11 +66,11 @@ struct Links {
     static let II: String = "Ingineria informatiei - linia de studiu engleza"
     static let II1 : String = "\(mainUrl)II1.html"
     
-    static let Pshiologie: String = "Psihologie"
-    static let Pshio : String = "\(mainUrl)Pshio1.html"
+//    static let Pshiologie: String = "Psihologie"
+//    static let Pshio : String = "\(mainUrl)Psiho1.html"
     
-    static let names: [String] = [M, I, MI, MIE, MM, IM, MIM, IIM, IIA, IE, IA, II, Pshiologie]
-    static let links: [[String]] = [[M1, M2, M3], [I1, I2, I3], [MI1, MI2, MI3], [MIE1, MIE2, MIE3], [MM1, MM2, MM3], [IM1, IM2, IM3], [MIM1, MIM2, MIM3], [IIM1], [IG1, IG2, IG3], [IE1, IE2, IE3], [IA1], [II1], [Pshio]]
+    static let names: [String] = [M, I, MI, MIE, MM, IM, MIM, IIM, IIA, IE, IA, II/*, Pshiologie*/]
+    static let links: [[String]] = [[M1, M2, M3], [I1, I2, I3], [MI1, MI2, MI3], [MIE1, MIE2, MIE3], [MM1, MM2, MM3], [IM1, IM2, IM3], [MIM1, MIM2, MIM3], [IIM1], [IG1, IG2, IG3], [IE1, IE2, IE3], [IA1], [II1]/*, [Pshio]*/]
     
     static func getNameFromLink(link: String) -> String {
         let parsedLink = link.split(separator: "/")

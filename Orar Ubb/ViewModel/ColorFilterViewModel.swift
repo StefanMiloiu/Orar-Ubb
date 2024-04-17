@@ -97,6 +97,23 @@ class CourseColorPickersViewModel: ObservableObject {
         return Color.gray
     }
     
+    func getColorTint() -> Color {
+        let fetchRequest = NSFetchRequest<ColorFilter>(entityName: "ColorFilter")
+        fetchRequest.predicate = NSPredicate(format: "courseType == %@", "Tint")
+        
+        do {
+            let color = try coreDataHandler.viewContext.fetch(fetchRequest)
+            if let color = color.first {
+                print("GETCOLORTINT -> \(color)")
+                return Color(red: color.r, green: color.g, blue: color.b, opacity: color.a)
+            }
+        } catch let error {
+            print("Error getting color: \(error)")
+        }
+        
+        return Color.red.opacity(0.7)
+    }
+    
     func removeAllColors() {
         let fetchRequest = NSFetchRequest<ColorFilter>(entityName: "ColorFilter")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
@@ -107,22 +124,4 @@ class CourseColorPickersViewModel: ObservableObject {
             print("Error deleting all colors: \(error)")
         }
     }
-//    func getColor(courseType: String) -> Color {
-//        let fetchRequest = NSFetchRequest<ColorFilter>(entityName: "ColorFilter")
-//        fetchRequest.predicate = NSPredicate(format: "courseType == %@", courseType)
-//        
-//        do {
-//            let color = try coreDataHandler.viewContext.fetch(fetchRequest)
-//            if let color = color.first {
-//                return Color(red: color.r, green: color.g, blue: color.b, opacity: color.a)
-//            } else {
-//                // Handle case when color is not found for the courseType
-//                return Color.black // Default color when no color is found
-//            }
-//        } catch let error {
-//            print("Error getting color: \(error)")
-//        }
-//        
-//        return Color.black
-//    }
 }

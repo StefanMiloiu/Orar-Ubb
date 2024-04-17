@@ -46,11 +46,14 @@ struct SettingsView: View {
                             .listRowSeparator(.hidden)
                     }//: Section
                     ColorPickersView()
+                    Section{
+                        TintColorPicker()
+                    }
                 }//: List
             }//: VStack
             .navigationTitle("Settings")
         }//:NavigationStack
-        .tint(.black)
+        .tint(.primary)
     }
 }
 
@@ -61,6 +64,8 @@ struct SettingsView: View {
         .environment(\.managedObjectContext, CoreDataProvider.shared.viewContext)
         .environmentObject(SharedGroupsViewModel()) // Ensure the result of environmentObject is used
         .environmentObject(SharedLecturesViewModel())
+        .environmentObject(CourseColorPickersViewModel())
+        .environmentObject(SharedTintColorViewModel())
 }
 
 

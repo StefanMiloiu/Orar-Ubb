@@ -50,7 +50,13 @@ struct SettingsSemigroupsView: View {
                 Text(semigroup)
                     .tag(semigroup)
             }
-            .onChange(of: sharedViewModel.selectedSemiGroup) {
+        }
+        .onChange(of: sharedViewModel.selectedSemiGroup) {
+            guard let initialSemiGroup = item?.semiGroup else {
+                return // No initial value, likely during initialization
+            }
+            
+            if sharedViewModel.selectedSemiGroup != initialSemiGroup {
                 CoreDataProvider.deleteAllData()
                 save()
                 sharedViewModelLectures.lectures = networkData.fetchScheduel(html: item?.html ?? "No html", section: item?.section ?? "No section", group: item?.group ?? "No group", semiGroup: item?.semiGroup ?? "No semigroup")
@@ -58,10 +64,10 @@ struct SettingsSemigroupsView: View {
                 WidgetCenter.shared.reloadAllTimelines()
             }
         }
-        .pickerStyle(.segmented)
         .onAppear {
                 sharedViewModel.selectedSemiGroup = item?.semiGroup ?? "1"
         }
+        .pickerStyle(.segmented)
     }
 }
 

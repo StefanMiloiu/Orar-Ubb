@@ -70,6 +70,25 @@ struct LabColorPicker: View {
     }
 }
 
+struct TintColorPicker: View {
+    @EnvironmentObject var viewModel: CourseColorPickersViewModel
+    @EnvironmentObject var sharedTint: SharedTintColorViewModel
+    @State var selectedColorTint: Color = .red.opacity(0.7)
+    var body: some View {
+        ColorPicker("Tint", selection: $selectedColorTint)
+            .onChange(of: selectedColorTint) {
+                if selectedColorTint != viewModel.getColorTint(){
+                    viewModel.updateColor(courseType: "Tint", color: selectedColorTint)
+                    sharedTint.tintColor = selectedColorTint
+                }
+            }
+            .onAppear {
+                let color = viewModel.getColorTint()
+                selectedColorTint = Color(.sRGB, red: color.components.r, green: color.components.g, blue: color.components.b, opacity: color.components.a)
+            }
+    }
+}
+
 
 #Preview {
     ColorPickersView()

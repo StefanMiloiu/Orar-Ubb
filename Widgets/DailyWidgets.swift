@@ -14,7 +14,35 @@ struct ProviderDaily: TimelineProvider {
     }
     
     func getSnapshot(in context: Context, completion: @escaping (SimpleDailyEntry) -> ()) {
-        let entry = SimpleDailyEntry(date: Date(), lectures: [Lecture(context: CoreDataProvider.shared.viewContext),Lecture(context: CoreDataProvider.shared.viewContext),Lecture(context: CoreDataProvider.shared.viewContext)])
+        var lecturesList: [Lecture] = []
+        let lectureOne = Lecture(context: CoreDataProvider.shared.viewContext)
+        lectureOne.discipline = "Metode avansate de programare"
+        lectureOne.room = "L336"
+        lectureOne.time = "12-00"
+        lectureOne.type = "Lab"
+        lectureOne.professor = "Teacher Name"
+        lectureOne.day = "Monday"
+        lectureOne.parity = " "
+        let lectureTwo = Lecture(context: CoreDataProvider.shared.viewContext)
+        lectureTwo.discipline = "Arhitectura sistemelor de calcul"
+        lectureTwo.room = "L001"
+        lectureTwo.time = "16-00"
+        lectureTwo.type = "Lab"
+        lectureTwo.professor = "Teacher Name"
+        lectureTwo.day = "Monday"
+        lectureTwo.parity = " "
+        let lectureThree = Lecture(context: CoreDataProvider.shared.viewContext)
+        lectureThree.discipline = "Baze de date"
+        lectureThree.room = "C510"
+        lectureThree.time = "18-00"
+        lectureThree.type = "Curs"
+        lectureThree.professor = "Teacher Name"
+        lectureThree.day = "Monday"
+        lectureThree.parity = "sapt. 1"
+        lecturesList.append(lectureOne)
+        lecturesList.append(lectureTwo)
+        lecturesList.append(lectureThree)
+        let entry = SimpleDailyEntry(date: Date(), lectures: lecturesList)
         completion(entry)
     }
     
@@ -27,7 +55,6 @@ struct ProviderDaily: TimelineProvider {
             if lecturesFiltered.count > 3 {
                 lecturesFiltered.removeSubrange(3..<lecturesFiltered.count)
             }
-            print("Fetched \(lectures.count) lectures.")
             // Create timeline entries with fetched lectures
             let entries: [SimpleDailyEntry] = [SimpleDailyEntry(date: Date(), lectures: lecturesFiltered)]
             //            let refreshDate = Date().advanced(by: 2 * 60 * 60) // Refresh every 2 hours
@@ -69,10 +96,10 @@ struct WidgetsEntryDailyView : View {
                     .multilineTextAlignment(.center)
             }
             if entry.lectures.isEmpty {
-                Text("No classes")
+                Text("No classes. Enjoy your day!😴")
                     .font(.subheadline)
-                    .foregroundStyle(weekend ? .gray.opacity(0.6) : .clear)
-                    .lineLimit(1)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.center)
             } else {
                 ForEach(entry.lectures.indices, id: \.self) { index in
                     let lecture = entry.lectures[index]

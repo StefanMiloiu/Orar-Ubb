@@ -18,6 +18,8 @@
 		8E0F0F432BCAD6E8008C1308 /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF0A22C2BC1DDCB000E8F6C /* CoreDataProvider.swift */; };
 		8E0F0F472BCAE220008C1308 /* Orar_Ubb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8EF5096C2BC043E900934F75 /* Orar_Ubb.xcdatamodeld */; };
 		8E0F0F482BCAE668008C1308 /* SettingsEntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D67B2BC4555E000CAD3B /* SettingsEntityModel.swift */; };
+		8E0F3F952BCEB33B0027ED44 /* LockScreenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0F3F942BCEB33B0027ED44 /* LockScreenWidget.swift */; };
+		8E0F3F962BCEB33B0027ED44 /* LockScreenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0F3F942BCEB33B0027ED44 /* LockScreenWidget.swift */; };
 		8E19D67A2BC453EC000CAD3B /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D6792BC453EC000CAD3B /* CoreDataModel.swift */; };
 		8E19D67C2BC4555E000CAD3B /* SettingsEntityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D67B2BC4555E000CAD3B /* SettingsEntityModel.swift */; };
 		8E19D67E2BC48088000CAD3B /* SettingsSemigroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E19D67D2BC48088000CAD3B /* SettingsSemigroupsView.swift */; };
@@ -45,9 +47,7 @@
 		8EF509692BC043E900934F75 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EF509682BC043E900934F75 /* Preview Assets.xcassets */; };
 		8EF5096B2BC043E900934F75 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF5096A2BC043E900934F75 /* Persistence.swift */; };
 		8EF5096E2BC043E900934F75 /* Orar_Ubb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8EF5096C2BC043E900934F75 /* Orar_Ubb.xcdatamodeld */; };
-		8EF509782BC043E900934F75 /* Orar_UbbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509772BC043E900934F75 /* Orar_UbbTests.swift */; };
-		8EF509822BC043E900934F75 /* Orar_UbbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509812BC043E900934F75 /* Orar_UbbUITests.swift */; };
-		8EF509842BC043E900934F75 /* Orar_UbbUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509832BC043E900934F75 /* Orar_UbbUITestsLaunchTests.swift */; };
+		8EF509782BC043E900934F75 /* WidgetToolsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509772BC043E900934F75 /* WidgetToolsTest.swift */; };
 		8EF509982BC0495500934F75 /* NetworkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509972BC0495500934F75 /* NetworkData.swift */; };
 		8EF5099B2BC0496900934F75 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 8EF5099A2BC0496900934F75 /* SwiftSoup */; };
 		8EF509A72BC150FE00934F75 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF509A62BC150FE00934F75 /* Links.swift */; };
@@ -65,13 +65,6 @@
 			remoteInfo = WidgetsExtension;
 		};
 		8EF509742BC043E900934F75 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8EF509562BC043E700934F75 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8EF5095D2BC043E700934F75;
-			remoteInfo = "Orar Ubb";
-		};
-		8EF5097E2BC043E900934F75 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8EF509562BC043E700934F75 /* Project object */;
 			proxyType = 1;
@@ -102,6 +95,7 @@
 		8E0F0F322BCAC178008C1308 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
 		8E0F0F342BCAC17A008C1308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E0F0F362BCAC17A008C1308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E0F3F942BCEB33B0027ED44 /* LockScreenWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenWidget.swift; sourceTree = "<group>"; };
 		8E19D6792BC453EC000CAD3B /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 		8E19D67B2BC4555E000CAD3B /* SettingsEntityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEntityModel.swift; sourceTree = "<group>"; };
 		8E19D67D2BC48088000CAD3B /* SettingsSemigroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSemigroupsView.swift; sourceTree = "<group>"; };
@@ -129,10 +123,7 @@
 		8EF5096A2BC043E900934F75 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		8EF5096D2BC043E900934F75 /* Orar_Ubb.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Orar_Ubb.xcdatamodel; sourceTree = "<group>"; };
 		8EF509732BC043E900934F75 /* Orar UbbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Orar UbbTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8EF509772BC043E900934F75 /* Orar_UbbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orar_UbbTests.swift; sourceTree = "<group>"; };
-		8EF5097D2BC043E900934F75 /* Orar UbbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Orar UbbUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8EF509812BC043E900934F75 /* Orar_UbbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orar_UbbUITests.swift; sourceTree = "<group>"; };
-		8EF509832BC043E900934F75 /* Orar_UbbUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orar_UbbUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8EF509772BC043E900934F75 /* WidgetToolsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetToolsTest.swift; sourceTree = "<group>"; };
 		8EF509972BC0495500934F75 /* NetworkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkData.swift; sourceTree = "<group>"; };
 		8EF509A62BC150FE00934F75 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 		8EF509AB2BC157C900934F75 /* SettingsYearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsYearView.swift; sourceTree = "<group>"; };
@@ -165,13 +156,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8EF5097A2BC043E900934F75 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -193,6 +177,7 @@
 				8E0F0F362BCAC17A008C1308 /* Info.plist */,
 				8E42175A2BCE472700BBA53B /* DailyWidgets.swift */,
 				8E36754F2BCE845600EB3BD9 /* Tools.swift */,
+				8E0F3F942BCEB33B0027ED44 /* LockScreenWidget.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -233,7 +218,6 @@
 			children = (
 				8EF509602BC043E700934F75 /* Orar Ubb */,
 				8EF509762BC043E900934F75 /* Orar UbbTests */,
-				8EF509802BC043E900934F75 /* Orar UbbUITests */,
 				8E0F0F2F2BCAC178008C1308 /* Widgets */,
 				8E0F0F2A2BCAC178008C1308 /* Frameworks */,
 				8EF5095F2BC043E700934F75 /* Products */,
@@ -245,7 +229,6 @@
 			children = (
 				8EF5095E2BC043E700934F75 /* Orar Ubb.app */,
 				8EF509732BC043E900934F75 /* Orar UbbTests.xctest */,
-				8EF5097D2BC043E900934F75 /* Orar UbbUITests.xctest */,
 				8E0F0F292BCAC177008C1308 /* WidgetsExtension.appex */,
 			);
 			name = Products;
@@ -276,18 +259,9 @@
 		8EF509762BC043E900934F75 /* Orar UbbTests */ = {
 			isa = PBXGroup;
 			children = (
-				8EF509772BC043E900934F75 /* Orar_UbbTests.swift */,
+				8EF509772BC043E900934F75 /* WidgetToolsTest.swift */,
 			);
 			path = "Orar UbbTests";
-			sourceTree = "<group>";
-		};
-		8EF509802BC043E900934F75 /* Orar UbbUITests */ = {
-			isa = PBXGroup;
-			children = (
-				8EF509812BC043E900934F75 /* Orar_UbbUITests.swift */,
-				8EF509832BC043E900934F75 /* Orar_UbbUITestsLaunchTests.swift */,
-			);
-			path = "Orar UbbUITests";
 			sourceTree = "<group>";
 		};
 		8EF509902BC0440A00934F75 /* Model */ = {
@@ -404,24 +378,6 @@
 			productReference = 8EF509732BC043E900934F75 /* Orar UbbTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8EF5097C2BC043E900934F75 /* Orar UbbUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8EF5098D2BC043E900934F75 /* Build configuration list for PBXNativeTarget "Orar UbbUITests" */;
-			buildPhases = (
-				8EF509792BC043E900934F75 /* Sources */,
-				8EF5097A2BC043E900934F75 /* Frameworks */,
-				8EF5097B2BC043E900934F75 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8EF5097F2BC043E900934F75 /* PBXTargetDependency */,
-			);
-			name = "Orar UbbUITests";
-			productName = "Orar UbbUITests";
-			productReference = 8EF5097D2BC043E900934F75 /* Orar UbbUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -439,10 +395,6 @@
 						CreatedOnToolsVersion = 15.3;
 					};
 					8EF509722BC043E900934F75 = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = 8EF5095D2BC043E700934F75;
-					};
-					8EF5097C2BC043E900934F75 = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = 8EF5095D2BC043E700934F75;
 					};
@@ -466,7 +418,6 @@
 			targets = (
 				8EF5095D2BC043E700934F75 /* Orar Ubb */,
 				8EF509722BC043E900934F75 /* Orar UbbTests */,
-				8EF5097C2BC043E900934F75 /* Orar UbbUITests */,
 				8E0F0F282BCAC177008C1308 /* WidgetsExtension */,
 			);
 		};
@@ -497,13 +448,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8EF5097B2BC043E900934F75 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -518,6 +462,7 @@
 				8E0F0F432BCAD6E8008C1308 /* CoreDataProvider.swift in Sources */,
 				8E0F0F472BCAE220008C1308 /* Orar_Ubb.xcdatamodeld in Sources */,
 				8E1EE14B2BCE48E500579416 /* DailyWidgets.swift in Sources */,
+				8E0F3F962BCEB33B0027ED44 /* LockScreenWidget.swift in Sources */,
 				8E3675512BCE845600EB3BD9 /* Tools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,6 +499,7 @@
 				8EF509B12BC15D6600934F75 /* SettingsView.swift in Sources */,
 				8EF509AC2BC157C900934F75 /* SettingsYearView.swift in Sources */,
 				8EF0A22D2BC1DDCB000E8F6C /* CoreDataProvider.swift in Sources */,
+				8E0F3F952BCEB33B0027ED44 /* LockScreenWidget.swift in Sources */,
 				8E42175B2BCE472700BBA53B /* DailyWidgets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,16 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EF509782BC043E900934F75 /* Orar_UbbTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8EF509792BC043E900934F75 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8EF509842BC043E900934F75 /* Orar_UbbUITestsLaunchTests.swift in Sources */,
-				8EF509822BC043E900934F75 /* Orar_UbbUITests.swift in Sources */,
+				8EF509782BC043E900934F75 /* WidgetToolsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,11 +525,6 @@
 			target = 8EF5095D2BC043E700934F75 /* Orar Ubb */;
 			targetProxy = 8EF509742BC043E900934F75 /* PBXContainerItemProxy */;
 		};
-		8EF5097F2BC043E900934F75 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8EF5095D2BC043E700934F75 /* Orar Ubb */;
-			targetProxy = 8EF5097E2BC043E900934F75 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -604,7 +536,7 @@
 				CODE_SIGN_ENTITLEMENTS = WidgetsExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 8B683A2ABG;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -617,7 +549,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-Ubb.Widgets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -640,7 +572,7 @@
 				CODE_SIGN_ENTITLEMENTS = WidgetsExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 8B683A2ABG;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -653,7 +585,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-Ubb.Widgets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -795,7 +727,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Orar Ubb/Orar Ubb.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Orar Ubb/Preview Content\"";
 				DEVELOPMENT_TEAM = 8B683A2ABG;
 				ENABLE_PREVIEWS = YES;
@@ -811,7 +743,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-Ubb";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -832,7 +764,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Orar Ubb/Orar Ubb.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Orar Ubb/Preview Content\"";
 				DEVELOPMENT_TEAM = 8B683A2ABG;
 				ENABLE_PREVIEWS = YES;
@@ -848,7 +780,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-Ubb";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -867,11 +799,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 8B683A2ABG;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				MARKETING_VERSION = 1.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-UbbTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -891,11 +823,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 8B683A2ABG;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				MARKETING_VERSION = 1.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-UbbTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -906,50 +838,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Orar Ubb.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Orar Ubb";
-			};
-			name = Release;
-		};
-		8EF5098E2BC043E900934F75 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8B683A2ABG;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-UbbUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Orar Ubb";
-			};
-			name = Debug;
-		};
-		8EF5098F2BC043E900934F75 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8B683A2ABG;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.miloiu.Orar-UbbUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Orar Ubb";
 			};
 			name = Release;
 		};
@@ -988,15 +876,6 @@
 			buildConfigurations = (
 				8EF5098B2BC043E900934F75 /* Debug */,
 				8EF5098C2BC043E900934F75 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8EF5098D2BC043E900934F75 /* Build configuration list for PBXNativeTarget "Orar UbbUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8EF5098E2BC043E900934F75 /* Debug */,
-				8EF5098F2BC043E900934F75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

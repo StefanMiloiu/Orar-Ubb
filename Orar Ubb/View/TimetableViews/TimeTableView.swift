@@ -27,6 +27,7 @@ struct TimeTableView: View {
     @State var selectedWeek = "1"
     @FetchRequest(fetchRequest: DisciplineFilter.all())
     var disciplines: FetchedResults<DisciplineFilter>
+    @Environment(\.verticalSizeClass) var sizeClass
     var body: some View {
         
         NavigationStack {
@@ -64,9 +65,10 @@ struct TimeTableView: View {
                             Button(action: {
                                 CoreDataProvider.deleteAllData()
                                 if item?.group != "" && item?.semiGroup != "" {
+                                    selectedWeek = " "
                                     sharedViewModel.lectures = (networkData.fetchScheduel(html: item?.html ?? "No html", section: item?.section ?? "No section", group: item?.group ?? "No group", semiGroup: item?.semiGroup ?? "No semigroup"))
                                     sharedViewModel.disciplines = networkData.fetchDisciplinesFilter(lectures: sharedViewModel.lectures)
-                                    WidgetCenter.shared.reloadTimelines(ofKind: "Widgets")
+                                    WidgetCenter.shared.reloadAllTimelines()
                                 }
                             }) {
                                 Image(systemName: "arrow.down.circle.dotted")
@@ -83,17 +85,19 @@ struct TimeTableView: View {
                         }
                     }
                     .sheet(isPresented: $isShowingSheet, content: {
+                        NavigationStack{
                             FiltersView()
-                            .presentationDragIndicator(.visible)
-                            .presentationDetents([.medium, .large])
+                        }
+                        .presentationCompactAdaptation(.sheet)
+                        .presentationDragIndicator(.visible)
+                        .presentationDetents([.medium, .large])
+                        .environment(\.managedObjectContext, CoreDataProvider.shared.viewContext)
                     })
             }
         }
         .onAppear {
-//            print(lectures.count)
             sharedViewModel.disciplines = Array(disciplines)
             sharedViewModel.lectures = Array(lectures).filter { lecture in
-                // Filter to get checked disciplines
                 let checkedDisciplines = sharedViewModel.disciplines.filter { $0.checked }.map { $0.discipline }
                 
                 // Check if lecture's discipline is in checked disciplines

@@ -38,7 +38,6 @@ struct WeekPicker: View {
             } else {
                 sharedViewModel.lectures = networkData.fetchScheduel(html: item?.html ?? "No html", section: item?.section ?? "No section", group: item?.group ?? "No group", semiGroup: item?.semiGroup ?? "No semigroup")
             }
-//            print("Selected week: \(selectedWeek)")
         }
         .pickerStyle(.segmented)
         .onAppear {

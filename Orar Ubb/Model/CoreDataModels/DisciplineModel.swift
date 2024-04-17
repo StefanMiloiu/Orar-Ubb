@@ -8,5 +8,7 @@
 import Foundation
 import CoreData
 
+
+/// Model for DisciplineFilter
 extension DisciplineFilter: Model{
 }

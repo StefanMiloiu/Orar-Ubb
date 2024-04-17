@@ -18,11 +18,40 @@ struct Provider: TimelineProvider {
     private let context = CoreDataProvider.shared.viewContext
     
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), lecture: Lecture(context: CoreDataProvider.shared.viewContext))
+        var lecture: Lecture?
+        do {
+            var lecturesFiltered: [Lecture] = []
+            let lectures = try container.viewContext.fetch(Lecture.all()).filter( { tools.getWeekFromDate() == tools.dayDictionary[$0.day ?? "Sunday"] && tools.checkBetween(interval: $0.time ?? "00-00") /*tools.dayDictionary[tools.getWeekFromDate()]*/
+                && tools.getLecturesNotHidden(discipline: $0.discipline ?? "Disciplina") } )
+            
+            if lectures.count == 0 {
+                let lecture = try container.viewContext.fetch(Lecture.all()).filter( { tools.getWeekFromDate() == tools.dayDictionary[$0.day ?? "Sunday"] && tools.checkRemainingLectures(interval: $0.time ?? "00-00") /*tools.dayDictionary[tools.getWeekFromDate()]*/
+                    && tools.getLecturesNotHidden(discipline: $0.discipline ?? "Discipline")} )
+                //only the first 3 lectures of the day
+                lecturesFiltered = lecture
+                if lecturesFiltered.count > 1{
+                    lecturesFiltered.removeSubrange(1..<lecturesFiltered.count)
+                }
+            } else {
+                lecturesFiltered = lectures
+            }
+            lecture = lecturesFiltered.first
+        } catch let err{
+            print(err.localizedDescription)
+        }
+        return SimpleEntry(date: Date(), lecture: lecture)
     }
     
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), lecture: Lecture(context: CoreDataProvider.shared.viewContext))
+        let lectureOne = Lecture(context: CoreDataProvider.shared.viewContext)
+        lectureOne.discipline = "Object Oriented Programming"
+        lectureOne.room = "L316"
+        lectureOne.time = "08-00"
+        lectureOne.type = "Lab"
+        lectureOne.professor = "Teacher Name"
+        lectureOne.day = "Wednesday"
+        lectureOne.parity = " "
+        let entry = SimpleEntry(date: Date(), lecture: lectureOne)
         completion(entry)
     }
     
@@ -30,13 +59,25 @@ struct Provider: TimelineProvider {
         // Perform Core Data operations on the main queue context
         // Note: You may want to move this to a background context if fetching large amounts of data
         do {
+            var lecturesFiltered: [Lecture] = []
             let lectures = try container.viewContext.fetch(Lecture.all()).filter( { tools.getWeekFromDate() == tools.dayDictionary[$0.day ?? "Sunday"] && tools.checkBetween(interval: $0.time ?? "00-00") /*tools.dayDictionary[tools.getWeekFromDate()]*/
                 && tools.getLecturesNotHidden(discipline: $0.discipline ?? "Disciplina") } )
-            print("Fetched \(lectures.count) lectures.")
+            
+            if lectures.count == 0 {
+                let lecture = try container.viewContext.fetch(Lecture.all()).filter( { tools.getWeekFromDate() == tools.dayDictionary[$0.day ?? "Sunday"] && tools.checkRemainingLectures(interval: $0.time ?? "00-00") /*tools.dayDictionary[tools.getWeekFromDate()]*/
+                    && tools.getLecturesNotHidden(discipline: $0.discipline ?? "Discipline")} )
+                //only the first 3 lectures of the day
+                lecturesFiltered = lecture
+                if lecturesFiltered.count > 1{
+                    lecturesFiltered.removeSubrange(1..<lecturesFiltered.count)
+                }
+            } else {
+                lecturesFiltered = lectures
+            }
+            print("Fetched \(lecturesFiltered.count) lectures.")
             // Create timeline entries with fetched lectures
-            let entries: [SimpleEntry] = [SimpleEntry(date: Date(), lecture: lectures.count > 0 ? lectures[0] : nil)]
-            //            let refreshDate = Date().advanced(by: 2 * 60 * 60) // Refresh every 2 hours
-            // Calculate the next hour for refresh
+            let entries: [SimpleEntry] = [SimpleEntry(date: Date(), lecture: lecturesFiltered.count > 0 ? lecturesFiltered[0] : nil)]
+
             let currentDate = Date()
             let calendar = Calendar.current
             let currentHour = calendar.component(.hour, from: currentDate)
@@ -74,10 +115,10 @@ struct WidgetsEntryView : View {
                     .multilineTextAlignment(.center)
             }
             if entry.lecture == nil {
-                Text("No classes")
+                Text("No classes. Enjoy your day!😴")
                     .font(.subheadline)
-                    .foregroundStyle(weekend ? .gray.opacity(0.6) : .clear)
-                    .lineLimit(1)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.center)
             } else {
                 HStack{
                     VStack{
@@ -141,12 +182,11 @@ struct Widgets: Widget {
                     .background()
             }
         }
-        //        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemSmall, .systemMedium])
         .configurationDisplayName("Ubb Schedule")
         .description("Widget for current day schedule.")
     }
 }
-
 
 
 #Preview(as: .systemSmall) {

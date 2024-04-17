@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var theTint: CourseColorPickersViewModel
+    @EnvironmentObject var sharedViewModel: SharedTintColorViewModel
     var body: some View {
         TabView {
             TimeTableView()
@@ -21,7 +23,12 @@ struct MainView: View {
                     Text("Settings")
                 }
         }
-        .tint(.red.opacity(0.7))
+        .onAppear {
+            print("1  -> \(sharedViewModel.tintColor)")
+            sharedViewModel.tintColor = theTint.getColorTint()
+            print("2  -> \(sharedViewModel.tintColor)")
+        }
+        .tint(sharedViewModel.tintColor)
     }
 }
 
@@ -30,4 +37,6 @@ struct MainView: View {
         .environment(\.managedObjectContext, CoreDataProvider.shared.viewContext)
         .environmentObject(SharedLecturesViewModel())
         .environmentObject(SharedGroupsViewModel())
+        .environmentObject(CourseColorPickersViewModel())
+        .environmentObject(SharedTintColorViewModel())
 }

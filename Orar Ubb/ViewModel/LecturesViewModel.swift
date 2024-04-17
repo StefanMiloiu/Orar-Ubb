@@ -13,3 +13,6 @@ class SharedLecturesViewModel: ObservableObject {
     @Published var disciplines: [DisciplineFilter] = []
 }
 
+class SharedTintColorViewModel: ObservableObject{
+    @Published var tintColor: Color = .red.opacity(0.7)
+}

@@ -27,33 +27,10 @@ extension Model where Self: NSManagedObject {
         try CoreDataProvider.shared.viewContext.save()
     }
     
-    //Find all
-//    static func all() -> NSFetchRequest<Self> {
-//        let request = NSFetchRequest<Self>(entityName: String(describing: self))
-//        request.sortDescriptors = []
-//        return request
-//    }
+    //All
     static func all() -> NSFetchRequest<Self> {
         let request = NSFetchRequest<Self>(entityName: String(describing: self))
         request.sortDescriptors = []
-        
-        // Add a predicate to filter out deleted items
-//        request.predicate = NSPredicate(format: "isDeleted == %@", NSNumber(value: false))
         return request
     }
-    
-    
-//    //Find first
-//    static func first() -> Self {
-//        let request = all()
-//        request.fetchLimit = 1
-//        do {
-//            let item = try CoreDataProvider.shared.viewContext.fetch(request).first!
-//            return item
-//        }catch {
-//            print(error)
-//        }
-//        return Self.init()
-//    }
-    
 }

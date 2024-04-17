@@ -83,43 +83,6 @@ class NetworkData: ObservableObject {
         task.resume()
     }
     
-    func getYear() -> Int {
-        do {
-            let doc: Document = try SwiftSoup.parse(NetworkData.html)
-            let year: String = try doc.title().components(separatedBy: " ")[1]
-            print(year)
-        } catch Exception.Error(let type, let message) {
-            print(String(describing: type) + ": " + message)
-        } catch {
-            print("error")
-        }
-        return 0
-    }
-    
-    func extractLecturesFromHTML() {
-        do {
-            let doc: Document = try SwiftSoup.parse(NetworkData.html)
-            let rows = try doc.select("tr") // Select all table rows
-            for row in rows {
-                let cells = try row.select("td") // Select all cells in the row
-                if cells.count >= 7 {
-                    let day = try cells[0].text()
-                    let time = try cells[1].text()
-                    let room = try cells[3].text()
-                    let group = try cells[4].text()
-                    let type = try cells[5].text()
-                    let subject = try cells[6].select("a").text()
-                    let lecturer = try cells[7].select("a").text()
-                    print(day, time, room, group, type, subject, lecturer)
-                }
-            }
-        } catch Exception.Error(let type, let message) {
-            print(String(describing: type) + ": " + message)
-        } catch {
-            print("Error parsing HTML content")
-        }
-    }
-    
     func fetchGroupsForSection(html: String) -> [String]{
         var grupe = [String]()
         do {

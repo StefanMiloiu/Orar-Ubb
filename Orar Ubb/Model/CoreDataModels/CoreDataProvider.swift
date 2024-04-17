@@ -7,8 +7,11 @@
 import Foundation
 import CoreData
 
+//MARK: - CoreDataProvider
 class CoreDataProvider {
     
+    //MARK: - Properties
+    // Singleton instance of the CoreDataProvider.
     static let shared = CoreDataProvider()
     let persistenceContainer: NSPersistentContainer
     
@@ -16,6 +19,8 @@ class CoreDataProvider {
         persistenceContainer.viewContext
     }
     
+    //MARK: - Initializer
+    // Private initializer to prevent multiple instances of CoreDataProvider.
     private init() {
         persistenceContainer = NSPersistentContainer(name: "Orar_Ubb")
         let url = URL.storeURl(for: "group.com.miloiu.Orar-Ubb", databaseName: "Orar_Ubb")
@@ -30,23 +35,8 @@ class CoreDataProvider {
         persistenceContainer.viewContext.automaticallyMergesChangesFromParent = true
     }
     
-    static func deleteAllItems(){
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Lecture") // Replace "Lecture" with your entity name
-        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        print("Deleting all items...")
-        
-        var deletedCount = 0
-        do {
-            let result = try CoreDataProvider.shared.viewContext.execute(batchDeleteRequest) as? NSBatchDeleteResult
-            if let deletedObjectIDs = result?.result as? [NSManagedObjectID] {
-                deletedCount = deletedObjectIDs.count
-            }
-            print("Deleted \(deletedCount) items")
-        } catch {
-            print("Error deleting all items: \(error)")
-        }
-    }
-
+    //MARK: - Methods
+    // Delete then save the context.
     static func deleteAllData() {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Lecture")
         fetchRequest.returnsObjectsAsFaults = false
@@ -61,6 +51,7 @@ class CoreDataProvider {
         }
     }
     
+    // Delete then save the context.
     static func deleteAllDataFilter() {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DisciplineFilter")
         fetchRequest.returnsObjectsAsFaults = false
@@ -78,6 +69,8 @@ class CoreDataProvider {
     
 }
 
+//MARK: - URL Extension
+// Extension to create a URL for the shared file container. (Capabilities -> App Groups (used for widgets))
 public extension URL {
     static func storeURl(for appGroup: String, databaseName: String) -> URL {
         guard let fileContainer = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroup) else {

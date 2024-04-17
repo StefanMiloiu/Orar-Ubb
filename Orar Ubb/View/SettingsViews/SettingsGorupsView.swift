@@ -33,11 +33,15 @@ struct SettingsGroupsView: View {
         }
         .tint(.primary)
         .onChange(of: groupSelected, {
-            item?.group = groupSelected
-            do {
-                try viewContext.save()
-            } catch let error {
-                print("Error saving group: \(error)")
+            if groupSelected != "Select" && groupSelected != item?.group{
+                sharedViewModel.selectedSemiGroup = groupSelected
+                item?.group = groupSelected
+                do {
+                    try viewContext.save()
+                    sharedViewModel.selectedSemiGroup = ""
+                } catch let error {
+                    print("Error saving group: \(error)")
+                }
             }
         })
         .onAppear {

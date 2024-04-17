@@ -15,35 +15,33 @@ struct FiltersView: View {
     var disciplines: FetchedResults<DisciplineFilter>
     @State var isChecked = false
     var body: some View {
-        VStack{
-            List{
-                Section {
-                    HStack{
-                        Spacer()
-                        Text("Check the courses you want to hide.")
-                            .font(.headline)
-                            .padding()
-                            .multilineTextAlignment(.center)
-                        Image(systemName: "eye.slash")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 50, height: 50)
-                            .padding()
-                        
-                        Spacer()
-                    }
+        List{
+            Section {
+                HStack{
+                    Spacer()
+                    Text("Check the courses you want to hide.")
+                        .font(.headline)
+                        .padding()
+                        .multilineTextAlignment(.center)
+                    Image(systemName: "eye.slash")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 50)
+                        .padding()
+                    
+                    Spacer()
                 }
-                .listRowBackground(Color.clear)
-                Section {
-                    ForEach(viewModel.disciplines.indices, id: \.self) { index in
-                        let discipline = viewModel.disciplines[index]
-                        Toggle(isOn: $viewModel.disciplines[index].checked, label: {
-                            Text(/*\(index)-*/"\(discipline.discipline ?? "Discipline")")
-                        })
-                        .onChange(of: viewModel.disciplines[index].checked) {
-                            save(filter: viewModel.disciplines[index])
-                            WidgetCenter.shared.reloadAllTimelines()
-                        }
+            }
+            .listRowBackground(Color.clear)
+            Section {
+                ForEach(viewModel.disciplines.indices, id: \.self) { index in
+                    let discipline = viewModel.disciplines[index]
+                    Toggle(isOn: $viewModel.disciplines[index].checked, label: {
+                        Text(/*\(index)-*/"\(discipline.discipline ?? "Discipline")")
+                    })
+                    .onChange(of: viewModel.disciplines[index].checked) {
+                        save(filter: viewModel.disciplines[index])
+                        WidgetCenter.shared.reloadAllTimelines()
                     }
                 }
             }
@@ -72,4 +70,5 @@ struct FiltersView: View {
     FiltersView()
         .environment(\.managedObjectContext, CoreDataProvider.shared.viewContext)
         .environmentObject(SharedLecturesViewModel())
+    
 }

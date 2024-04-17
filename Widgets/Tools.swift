@@ -71,6 +71,25 @@ struct WidgetTools {
         return false
     }
     
+    func checkNextLecture(interval: String) -> Bool {
+        var intervalArray = interval.components(separatedBy: "-")
+        guard intervalArray.count == 2 else { return false }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH"
+        
+        if intervalArray[0].count == 1{
+            intervalArray[0] = "0" + intervalArray[0]
+        }
+        
+        let currentHourString = getCurrentHour()
+        if currentHourString < intervalArray[0] {
+            return true
+        }
+        return false
+    }
+    
+    
     func checkRemainingLectures(interval: String) -> Bool {
         let intervalArray = interval.components(separatedBy: "-")
         guard intervalArray.count == 2 else { return false }
